@@ -1,0 +1,6 @@
+Bliss Bulletin
+==============
+Webapp to manage a list of bulletins
+
+
+Since there is no persistent db yet the way to view the bulletins is to first create a Role 'ROLE_ADMIN' and a user that has said role.
