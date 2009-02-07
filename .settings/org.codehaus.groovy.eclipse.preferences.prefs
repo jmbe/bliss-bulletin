@@ -1,3 +1,5 @@
-#Created by grails
+#Sat Feb 07 11:50:23 CET 2009
 eclipse.preferences.version=1
+groovy.compiler.output.path=/web-app/WEB-INF/classes
+groovy.dont.check.package.vs.src.path=true
 groovy.dont.generate.class.files=true

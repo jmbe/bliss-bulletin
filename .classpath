@@ -11,7 +11,5 @@
 	<classpathentry kind="src" path="test/unit"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="var" path="GRAILS_HOME/ant/lib/ant.jar"/>
-    
-	
 	<classpathentry kind="output" path="web-app/WEB-INF/classes"/>
 </classpath>
