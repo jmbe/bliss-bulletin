@@ -36,13 +36,6 @@
                             
                         </tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name">Path:</td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean:bulletinInstance, field:'path')}</td>
-                            
-                        </tr>
-                    
                     </tbody>
                 </table>
             </div>

@@ -25,8 +25,6 @@
                         
                    	        <g:sortableColumn property="name" title="Name" />
                         
-                   	        <g:sortableColumn property="path" title="Path" />
-                        
                         </tr>
                     </thead>
                     <tbody>
@@ -36,8 +34,6 @@
                             <td><g:link action="show" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'id')}</g:link></td>
                         
                             <td>${fieldValue(bean:bulletinInstance, field:'name')}</td>
-                        
-                            <td>${fieldValue(bean:bulletinInstance, field:'path')}</td>
                         
                         </tr>
                     </g:each>

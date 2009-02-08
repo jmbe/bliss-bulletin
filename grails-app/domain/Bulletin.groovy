@@ -1,4 +1,6 @@
+import java.sql.Blob
+
 class Bulletin {
 	String name
-	String path
+	Blob data
 }

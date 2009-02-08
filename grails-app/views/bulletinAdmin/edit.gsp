@@ -37,16 +37,6 @@
                                     <input type="text" id="name" name="name" value="${fieldValue(bean:bulletinInstance,field:'name')}"/>
                                 </td>
                             </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="path">Path:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:bulletinInstance,field:'path','errors')}">
-                                    <input type="text" id="path" name="path" value="${fieldValue(bean:bulletinInstance,field:'path')}"/>
-                                </td>
-                            </tr> 
-                        
                         </tbody>
                     </table>
                 </div>
