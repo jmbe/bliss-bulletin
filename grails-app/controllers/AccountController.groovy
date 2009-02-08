@@ -2,9 +2,9 @@
 
 
 /**
- * User controller.
+ * Account controller.
  */
-class UserController {
+class AccountController {
 
 	def authenticateService
 
@@ -19,13 +19,13 @@ class UserController {
 		if (!params.max) {
 			params.max = 10
 		}
-		[personList: User.list(params)]
+		[personList: Account.list(params)]
 	}
 
 	def show = {
-		def person = User.get(params.id)
+		def person = Account.get(params.id)
 		if (!person) {
-			flash.message = "User not found with id $params.id"
+			flash.message = "Account not found with id $params.id"
 			redirect action: list
 			return
 		}
@@ -45,10 +45,10 @@ class UserController {
 	 */
 	def delete = {
 
-		def person = User.get(params.id)
+		def person = Account.get(params.id)
 		if (person) {
 			def authPrincipal = authenticateService.principal()
-			//avoid self-delete if the logged-in user is an admin
+			//avoid self-delete if the logged-in Account is an admin
 			if (!(authPrincipal instanceof String) && authPrincipal.username == person.username) {
 				flash.message = "You can not delete yourself, please login as another admin and try again"
 			}
@@ -56,11 +56,11 @@ class UserController {
 				//first, delete this person from People_Authorities table.
 				Role.findAll().each { it.removeFromPeople(person) }
 				person.delete()
-				flash.message = "User $params.id deleted."
+				flash.message = "Account $params.id deleted."
 			}
 		}
 		else {
-			flash.message = "User not found with id $params.id"
+			flash.message = "Account not found with id $params.id"
 		}
 
 		redirect action: list
@@ -68,9 +68,9 @@ class UserController {
 
 	def edit = {
 
-		def person = User.get(params.id)
+		def person = Account.get(params.id)
 		if (!person) {
-			flash.message = "User not found with id $params.id"
+			flash.message = "Account not found with id $params.id"
 			redirect action: list
 			return
 		}
@@ -83,9 +83,9 @@ class UserController {
 	 */
 	def update = {
 
-		def person = User.get(params.id)
+		def person = Account.get(params.id)
 		if (!person) {
-			flash.message = "User not found with id $params.id"
+			flash.message = "Account not found with id $params.id"
 			redirect action: edit, id: params.id
 			return
 		}
@@ -93,7 +93,7 @@ class UserController {
 		long version = params.version.toLong()
 		if (person.version > version) {
 			person.errors.rejectValue 'version', "person.optimistic.locking.failure",
-				"Another user has updated this User while you were editing."
+				"Another Account has updated this Account while you were editing."
 				render view: 'edit', model: buildPersonModel(person)
 			return
 		}
@@ -114,7 +114,7 @@ class UserController {
 	}
 
 	def create = {
-		[person: new User(params), authorityList: Role.list()]
+		[person: new Account(params), authorityList: Role.list()]
 	}
 
 	/**
@@ -122,7 +122,7 @@ class UserController {
 	 */
 	def save = {
 
-		def person = new User()
+		def person = new Account()
 		person.properties = params
 		person.passwd = authenticateService.encodePassword(params.passwd)
 		if (person.save()) {

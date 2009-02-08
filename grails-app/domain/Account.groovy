@@ -1,11 +1,7 @@
-
-
-
-
 /**
- * User domain class.
+ * Account domain class.
  */
-class User {
+class Account {
 	static transients = ['pass']
 	static hasMany = [authorities: Role]
 	static belongsTo = Role

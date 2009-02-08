@@ -16,7 +16,7 @@ class RegisterController {
 	static Map allowedMethods = [save: 'POST', update: 'POST']
 
 	/**
-	 * User Registration Top page.
+	 * Account Registration Top page.
 	 */
 	def index = {
 
@@ -27,7 +27,7 @@ class RegisterController {
 		}
 
 		if (session.id) {
-			def person = new User()
+			def person = new Account()
 			person.properties = params
 			return [person: person]
 		}
@@ -36,14 +36,14 @@ class RegisterController {
 	}
 
 	/**
-	 * User Information page for current user.
+	 * Account Information page for current user.
 	 */
 	def show = {
 
 		// get user id from session's domain class.
 		def user = authenticateService.userDomain()
 		if (user) {
-			render view: 'show', model: [person: User.get(user.id)]
+			render view: 'show', model: [person: Account.get(user.id)]
 		}
 		else {
 			redirect action: index
@@ -58,11 +58,11 @@ class RegisterController {
 		def person
 		def user = authenticateService.userDomain()
 		if (user) {
-			person = User.get(user.id)
+			person = Account.get(user.id)
 		}
 
 		if (!person) {
-			flash.message = "[Illegal Access] User not found with id ${params.id}"
+			flash.message = "[Illegal Access] Account not found with id ${params.id}"
 			redirect action: index
 			return
 		}
@@ -78,7 +78,7 @@ class RegisterController {
 		def person
 		def user = authenticateService.userDomain()
 		if (user) {
-			person = User.get(user.id)
+			person = Account.get(user.id)
 		}
 		else {
 			redirect action: index
@@ -86,7 +86,7 @@ class RegisterController {
 		}
 
 		if (!person) {
-			flash.message = "[Illegal Access] User not found with id ${params.id}"
+			flash.message = "[Illegal Access] Account not found with id ${params.id}"
 			redirect action: index, id: params.id
 			return
 		}
@@ -133,7 +133,7 @@ class RegisterController {
 			return
 		}
 
-		def person = new User()
+		def person = new Account()
 		person.properties = params
 
 		def config = authenticateService.securityConfig

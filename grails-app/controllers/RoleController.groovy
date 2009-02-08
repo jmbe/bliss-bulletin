@@ -85,7 +85,7 @@ class RoleController {
 		long version = params.version.toLong()
 		if (authority.version > version) {
 			authority.errors.rejectValue 'version', 'authority.optimistic.locking.failure',
-				'Another user has updated this Role while you were editing.'
+				'Another Account has updated this Role while you were editing.'
 			render view: 'edit', model: [authority: authority]
 			return
 		}

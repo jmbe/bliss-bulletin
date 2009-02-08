@@ -4,7 +4,7 @@ security {
 
 	active = true
 
-	loginUserDomainClass = "User" 
+	loginUserDomainClass = "Account" 
 	authorityDomainClass = "Role"
 
 	useRequestMapDomainClass = false

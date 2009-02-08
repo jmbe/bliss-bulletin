@@ -13,8 +13,12 @@ hibernate {
 environments {
 	development {
 		dataSource {
-			dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-			url = "jdbc:hsqldb:mem:devDB"
+			driverClassName = "com.mysql.jdbc.Driver"
+			dbCreate =  "create-drop"
+			
+			username = "root"
+			password = ""
+			url = "jdbc:mysql://localhost/bliss-bulletin"
 		}
 	}
 	test {

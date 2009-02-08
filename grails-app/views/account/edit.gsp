@@ -1,17 +1,18 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Create User</title>
+	<title>Edit Account</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">User List</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">Account List</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">New Account</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>Create User</h1>
+		<h1>Edit Account</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -20,7 +21,15 @@
 			<g:renderErrors bean="${person}" as="list" />
 		</div>
 		</g:hasErrors>
-		<g:form action="save">
+
+		<div class="prop">
+			<span class="name">ID:</span>
+			<span class="value">${person.id}</span>
+		</div>
+
+		<g:form>
+			<input type="hidden" name="id" value="${person.id}" />
+			<input type="hidden" name="version" value="${person.version}" />
 			<div class="dialog">
 				<table>
 				<tbody>
@@ -49,7 +58,7 @@
 					<tr class="prop">
 						<td valign="top" class="name"><label for="enabled">Enabled:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'enabled','errors')}">
-							<g:checkBox name="enabled" value="${person.enabled}" ></g:checkBox>
+							<g:checkBox name="enabled" value="${person.enabled}"/>
 						</td>
 					</tr>
 
@@ -63,7 +72,7 @@
 					<tr class="prop">
 						<td valign="top" class="name"><label for="email">Email:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'email','errors')}">
-							<input type="text" id="email" name="email" value="${person.email?.encodeAsHTML()}"/>
+							<input type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
 						</td>
 					</tr>
 
@@ -75,22 +84,25 @@
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name" align="left">Assign Roles:</td>
+						<td valign="top" class="name"><label for="authorities">Roles:</label></td>
+						<td valign="top" class="value ${hasErrors(bean:person,field:'authorities','errors')}">
+							<ul>
+							<g:each var="entry" in="${roleMap}">
+								<li>${entry.key.authority.encodeAsHTML()}
+									<g:checkBox name="${entry.key.authority}" value="${entry.value}"/>
+								</li>
+							</g:each>
+							</ul>
+						</td>
 					</tr>
-
-					<g:each in="${authorityList}">
-					<tr>
-						<td valign="top" class="name" align="left">${it.authority.encodeAsHTML()}</td>
-						<td align="left"><g:checkBox name="${it.authority}"/></td>
-					</tr>
-					</g:each>
 
 				</tbody>
 				</table>
 			</div>
 
 			<div class="buttons">
-				<span class="button"><input class="save" type="submit" value="Create" /></span>
+				<span class="button"><g:actionSubmit class="save" value="Update" /></span>
+				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
 			</div>
 
 		</g:form>

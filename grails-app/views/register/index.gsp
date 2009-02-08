@@ -1,6 +1,6 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>User Registration</title>
+	<title>Account Registration</title>
 </head>
 
 <body>
@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="body">
-		<h1>User Registration</h1>
+		<h1>Account Registration</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>

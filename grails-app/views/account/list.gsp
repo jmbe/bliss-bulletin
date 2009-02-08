@@ -1,17 +1,17 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>User List</title>
+	<title>Account List</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="create" action="create">New User</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">New Account</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>User List</h1>
+		<h1>Account List</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="paginateButtons">
-			<g:paginate total="${User.count()}" />
+			<g:paginate total="${Account.count()}" />
 		</div>
 
 	</div>

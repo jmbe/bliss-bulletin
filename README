@@ -2,5 +2,9 @@ Bliss Bulletin
 ==============
 Webapp to manage a list of bulletins
 
-
-Since there is no persistent db yet the way to view the bulletins is to first create a Role 'ROLE_ADMIN' and a user that has said role.
+Requirements
+============
+To run bliss-bulletin in dev environment you need a database setup to the following url and the following user
+url: "jdbc:mysql://localhost/bliss-bulletin"
+username: "root"
+password: ""
