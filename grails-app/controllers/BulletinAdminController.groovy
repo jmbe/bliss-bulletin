@@ -1,7 +1,7 @@
 import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 
 @Secured(['ROLE_ADMIN'])
-class BulletinController {
+class BulletinAdminController {
 
 	def BulletinService bulletinService
 	
