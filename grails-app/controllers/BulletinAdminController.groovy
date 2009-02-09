@@ -90,3 +90,4 @@ class BulletinAdminController {
 		redirect(action:list,params:params)
     }
 }
+
