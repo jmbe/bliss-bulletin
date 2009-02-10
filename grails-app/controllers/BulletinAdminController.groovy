@@ -24,6 +24,16 @@ class BulletinAdminController {
         }
         else { return [ bulletinInstance : bulletinInstance ] }
     }
+	
+	def toggleVisible = {
+		def bulletinInstance = Bulletin.get( params.id )
+		if(!bulletinInstance) {
+            flash.message = "Bulletin not found with id ${params.id}"
+        } else { 
+        	bulletinInstance.visible = !bulletinInstance.visible
+        }
+        redirect(action:list)
+	}
 
     def delete = {
         def bulletinInstance = Bulletin.get( params.id )
