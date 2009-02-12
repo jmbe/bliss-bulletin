@@ -57,10 +57,12 @@ SET character_set_client = utf8;
 CREATE TABLE `bulletin` (
   `id` bigint(20) NOT NULL auto_increment,
   `version` bigint(20) NOT NULL,
+  `ndownloads` int(11) NOT NULL,
+  `data` mediumblob NOT NULL,
   `name` varchar(255) NOT NULL,
-  `data` blob,
+  `visible` bit(1) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -134,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2009-02-08 22:02:51
+-- Dump completed on 2009-02-12 21:41:35

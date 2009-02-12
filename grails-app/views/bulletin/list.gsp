@@ -23,6 +23,8 @@
                    	        <g:sortableColumn property="id" title="Id" />
                         
                    	        <g:sortableColumn property="name" title="Name" />
+                   	        
+                   	        <th></th>
                         
                         </tr>
                     </thead>
@@ -33,6 +35,8 @@
                             <td>${fieldValue(bean:bulletinInstance, field:'id')}</td>
                         
                             <td>${fieldValue(bean:bulletinInstance, field:'name')}</td>
+                        	
+                        	<td><g:link action="data" id="${bulletinInstance.id}">Ladda ner</g:link></td>
                         
                         </tr>
                     </g:each>

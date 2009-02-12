@@ -1,7 +1,10 @@
-import java.sql.Blob
-
 class Bulletin {
 	String name
-	Blob data
+	byte[] data
 	boolean visible
+	int nDownloads
+	
+	static constraints = {
+		data(size: 0..10000000)
+	}
 }
