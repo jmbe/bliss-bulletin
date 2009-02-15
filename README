@@ -4,8 +4,6 @@ Webapp to manage a list of bulletins
 
 Requirements
 ============
-Grails 1.0.4 stable
-
 To run bliss-bulletin in dev environment you need a database setup to the following url and the following user
 url: "jdbc:mysql://localhost/bliss-bulletin"
 username: "root"
