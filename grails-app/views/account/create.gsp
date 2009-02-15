@@ -78,10 +78,10 @@
 						<td valign="top" class="name" align="left">Assign Roles:</td>
 					</tr>
 
-					<g:each in="${authorityList}">
+					<g:each var="auth" in="${authorityList}">
 					<tr>
-						<td valign="top" class="name" align="left">${it.authority.encodeAsHTML()}</td>
-						<td align="left"><g:checkBox name="${it.authority}"/></td>
+						<td valign="top" class="name" align="left">${auth.authority.encodeAsHTML()}</td>
+						<td align="left"><g:checkBox name="${auth.authority}"/></td>
 					</tr>
 					</g:each>
 

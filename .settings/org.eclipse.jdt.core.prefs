@@ -1,6 +1,5 @@
-#Sun Feb 08 23:13:32 CET 2009
+#Sun Feb 15 14:18:01 CET 2009
 eclipse.preferences.version=1
-org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=*.launch,*.groovy
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
 org.eclipse.jdt.core.compiler.compliance=1.5
 org.eclipse.jdt.core.compiler.source=1.5
