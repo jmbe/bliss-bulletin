@@ -43,7 +43,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (1,2,'','','\0','','d033e22ae348aeb5660fc2140aec35850c4da997','Administrator','admin');
+INSERT INTO `account` VALUES (1,1,'','','\0','','d033e22ae348aeb5660fc2140aec35850c4da997','Administrator','admin');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,12 +57,12 @@ SET character_set_client = utf8;
 CREATE TABLE `bulletin` (
   `id` bigint(20) NOT NULL auto_increment,
   `version` bigint(20) NOT NULL,
-  `ndownloads` int(11) NOT NULL,
   `data` mediumblob NOT NULL,
+  `n_downloads` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `visible` bit(1) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -97,34 +97,34 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (1,2,'ROLE_ADMIN','Administrator');
+INSERT INTO `role` VALUES (1,1,'ROLE_ADMIN','Administrator');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `role_account`
+-- Table structure for table `role_people`
 --
 
-DROP TABLE IF EXISTS `role_account`;
+DROP TABLE IF EXISTS `role_people`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-CREATE TABLE `role_account` (
-  `authorities_id` bigint(20) NOT NULL,
-  `people_id` bigint(20) NOT NULL,
-  PRIMARY KEY  (`people_id`,`authorities_id`),
-  KEY `FKD0A3DB648F01F561` (`people_id`),
-  KEY `FKD0A3DB64EC50A106` (`authorities_id`)
+CREATE TABLE `role_people` (
+  `account_id` bigint(20) NOT NULL,
+  `role_id` bigint(20) NOT NULL,
+  PRIMARY KEY  (`role_id`,`account_id`),
+  KEY `FK28B75E7852388A1A` (`role_id`),
+  KEY `FK28B75E78ED2A3E7A` (`account_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
--- Dumping data for table `role_account`
+-- Dumping data for table `role_people`
 --
 
-LOCK TABLES `role_account` WRITE;
-/*!40000 ALTER TABLE `role_account` DISABLE KEYS */;
-INSERT INTO `role_account` VALUES (1,1);
-/*!40000 ALTER TABLE `role_account` ENABLE KEYS */;
+LOCK TABLES `role_people` WRITE;
+/*!40000 ALTER TABLE `role_people` DISABLE KEYS */;
+INSERT INTO `role_people` VALUES (1,1);
+/*!40000 ALTER TABLE `role_people` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -136,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2009-02-12 21:41:35
+-- Dump completed on 2009-02-15 14:24:43

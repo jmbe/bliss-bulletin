@@ -16,8 +16,8 @@ environments {
 			driverClassName = "com.mysql.jdbc.Driver"
 			dbCreate =  "update"
 			
-			username = "root"
-			password = ""
+			username = "bulletin-dev"
+			password = "bulletin-dev"
 			url = "jdbc:mysql://localhost/bliss-bulletin"
 		}
 	}

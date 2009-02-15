@@ -6,5 +6,7 @@ Requirements
 ============
 To run bliss-bulletin in dev environment you need a database setup to the following url and the following user
 url: "jdbc:mysql://localhost/bliss-bulletin"
-username: "root"
-password: ""
+username: "bulletin-dev"
+password: "bulletin-dev"
+
+grant all on `bliss-bulletin`.* to 'bulletin-dev'@'localhost' identified by 'bulletin-dev';
