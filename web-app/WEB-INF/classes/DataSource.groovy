@@ -5,8 +5,8 @@ dataSource {
 	password = ""
 }
 hibernate {
-    cache.use_second_level_cache=false
-    cache.use_query_cache=false
+    cache.use_second_level_cache=true
+    cache.use_query_cache=true
     cache.provider_class='com.opensymphony.oscache.hibernate.OSCacheProvider'
 }
 // environment specific settings
@@ -16,14 +16,14 @@ environments {
 			driverClassName = "com.mysql.jdbc.Driver"
 			dbCreate =  "update"
 			
-			username = "root"
-			password = ""
+			username = "bulletin-dev"
+			password = "bulletin-dev"
 			url = "jdbc:mysql://localhost/bliss-bulletin"
 		}
 	}
 	test {
 		dataSource {
-			dbCreate = "update"
+			dbCreate = "create"
 			url = "jdbc:hsqldb:mem:testDb"
 		}
 	}
