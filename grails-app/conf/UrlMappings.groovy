@@ -1,5 +1,6 @@
 class UrlMappings {
     static mappings = {
+      "/"(controller:"bulletin")
       "/$controller/$action?/$id?"{
 	      constraints {
 			 // apply constraints here
