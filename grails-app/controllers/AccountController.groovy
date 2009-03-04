@@ -1,9 +1,9 @@
-
-
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 
 /**
  * Account controller.
  */
+@Secured(['ROLE_ADMIN'])
 class AccountController {
 
 	def authenticateService
