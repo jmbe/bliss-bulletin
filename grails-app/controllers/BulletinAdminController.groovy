@@ -48,17 +48,6 @@ class BulletinAdminController {
         }
     }
 
-    def edit = {
-        def bulletinInstance = Bulletin.get( params.id )
-
-        if(!bulletinInstance) {
-            flash.message = "Bulletin not found with id ${params.id}"
-            redirect(action:list)
-        }
-        else {
-            return [ bulletinInstance : bulletinInstance ]
-        }
-    }
 
     def update = {
         def bulletinInstance = Bulletin.get( params.id )

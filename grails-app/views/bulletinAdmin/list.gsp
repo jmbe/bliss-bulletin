@@ -24,6 +24,8 @@
                         
                    	        <g:sortableColumn property="name" title="Name" />
 
+                   	        <g:sortableColumn property="description" title="Description" />
+
 							<g:sortableColumn property="nDownloads" title="Nedladdningar" />
 
                    	        <g:sortableColumn property="visible" title="Visible" />
@@ -37,6 +39,8 @@
                             <td><g:link action="show" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'id')}</g:link></td>
                         
                             <td>${fieldValue(bean:bulletinInstance, field:'name')}</td>
+
+                            <td>${fieldValue(bean:bulletinInstance, field:'description')}</td>
 
                             <td>${fieldValue(bean:bulletinInstance, field:'nDownloads')}</td>
 

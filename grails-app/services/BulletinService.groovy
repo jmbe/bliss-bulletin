@@ -11,7 +11,7 @@ class BulletinService {
 		//downloadedfile.transferTo(file)
 		
 		def data = getDataBytes(downloadedfile.inputStream, (int)downloadedfile.size)
-		def bulletin = new Bulletin(name: filename, data: data).save()
+		def bulletin = new Bulletin(name: filename, data: data, description: "").save()
     }
     
 	def getDataBytes(stream, length) {

@@ -31,7 +31,7 @@
                         
                             <td>${fieldValue(bean:bulletinInstance, field:'id')}</td>
                         
-                            <td>${fieldValue(bean:bulletinInstance, field:'name')}</td>
+                            <td>${fieldValue(bean:bulletinInstance, field:'description')}</td>
                         	
                         	<td><g:link action="data" id="${bulletinInstance.id}">Ladda ner</g:link></td>
                         

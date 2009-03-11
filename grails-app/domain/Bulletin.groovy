@@ -1,5 +1,6 @@
 class Bulletin {
 	String name
+	String description
 	byte[] data
 	boolean visible
 	int nDownloads
