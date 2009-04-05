@@ -63,8 +63,9 @@ class BulletinAdminController {
             }
             bulletinInstance.properties = params
             if(!bulletinInstance.hasErrors() && bulletinInstance.save()) {
-                flash.message = "Bulletin ${params.id} updated"
-                redirect(action:show,id:bulletinInstance.id)
+                flash.message = "Bulletin ${bulletinInstance.name} uppdaterad"
+                //redirect(action:show,id:bulletinInstance.id)
+                redirect(action:list)
             }
             else {
                 render(view:'edit',model:[bulletinInstance:bulletinInstance])
