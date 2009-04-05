@@ -18,7 +18,7 @@ environments {
 			
 			username = "bulletin-dev"
 			password = "bulletin-dev"
-			url = "jdbc:mysql://localhost/bliss-bulletin"
+			url = "jdbc:mysql://localhost/bliss-bulletin?autoReconnect=true"
 		}
 	}
 	test {
@@ -34,7 +34,7 @@ environments {
 			
 			username = "bulletin-dev"
 			password = "bulletin-dev"
-			url = "jdbc:mysql://localhost/bliss-bulletin"
+			url = "jdbc:mysql://localhost/bliss-bulletin?autoReconnect=true"
 		}
 	}
 }
