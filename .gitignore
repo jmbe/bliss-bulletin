@@ -1,5 +1,7 @@
-stacktrace.log
+*.log
+*~
 web-app/WEB-INF/classes/
 plugins
 target
 test
+
