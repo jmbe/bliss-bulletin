@@ -3,7 +3,7 @@ import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 @Secured(['ROLE_ADMIN'])
 class BulletinAdminController {
 
-	def BulletinService bulletinService
+	def bulletinService
 	
     def index = { redirect(action:list,params:params) }
 
