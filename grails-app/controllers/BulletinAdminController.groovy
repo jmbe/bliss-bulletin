@@ -84,7 +84,8 @@ class BulletinAdminController {
 
     def save = {
     	def downloadedfile = request.getFile('bulletin')
-    	bulletinService.create(downloadedfile)
+    	def description = params['description']
+    	bulletinService.create(downloadedfile, description)
     	flash.message = "The bulletin was created"
 		redirect(action:list,params:params)
     }

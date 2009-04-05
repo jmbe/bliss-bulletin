@@ -4,14 +4,11 @@ class BulletinService {
 
     boolean transactional = true
 
-    def create(downloadedfile) {
+    def create(downloadedfile, description) {
     	def filename = downloadedfile.originalFilename
-		//def file = new File("bulletins", filename)
-		//file.parentFile.mkdirs()
-		//downloadedfile.transferTo(file)
 		
 		def data = getDataBytes(downloadedfile.inputStream, (int)downloadedfile.size)
-		def bulletin = new Bulletin(name: filename, data: data, description: "").save()
+		def bulletin = new Bulletin(name: filename, data: data, description: description).save()
     }
     
 	def getDataBytes(stream, length) {

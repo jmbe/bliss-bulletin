@@ -32,7 +32,15 @@
                                 <td valign="top" class="value">
                                     <input id="file" type="file" name="bulletin" />
                                 </td>
-                            </tr> 
+                            </tr>
+                            <tr>
+                            	<td valign="top" class="name">
+                                    <label for="description">Description:</label>
+                                </td>
+                            	<td>
+                            		<input type="text" id="description" name="description"/>
+                            	</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
