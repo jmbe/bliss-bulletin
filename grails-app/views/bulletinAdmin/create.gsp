@@ -4,14 +4,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Create Bulletin</title>         
+        <title>Ladda upp bulletin</title>         
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><g:link class="list" action="list">Bulletin List</g:link></span>
+            <span class="menuButton"><g:link class="list" action="list">Bulletinlista</g:link></span>
         </div>
         <div class="body">
-            <h1>Create Bulletin</h1>
+            <h1>Ladda upp bulletin</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -26,16 +26,16 @@
                         <tbody>
                         
                             <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="file">File:</label>
+                                <td class="name">
+                                    <label for="file">Bulletinfil</label>
                                 </td>
-                                <td valign="top" class="value">
+                                <td  class="value">
                                     <input id="file" type="file" name="bulletin" />
                                 </td>
                             </tr>
                             <tr>
-                            	<td valign="top" class="name">
-                                    <label for="description">Description:</label>
+                            	<td valign="middle" class="name">
+                                    <label for="description">Beskrivning</label>
                                 </td>
                             	<td>
                             		<input type="text" id="description" name="description"/>
@@ -44,8 +44,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
+                <div class="buttons" style="text-align: right;">
+                    <span class="button"><input class="save" type="submit" value="Ladda upp" /></span>
                 </div>
             </g:form>
         </div>

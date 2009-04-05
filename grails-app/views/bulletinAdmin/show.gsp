@@ -8,11 +8,11 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><g:link class="list" action="list">Bulletin List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New Bulletin</g:link></span>
+            <span class="menuButton"><g:link class="list" action="list">Bulletinlista</g:link></span>
+            <span class="menuButton"><g:link class="create" action="create">Ladda upp bulletin</g:link></span>
         </div>
         <div class="body">
-            <h1>Edit Bulletin</h1>
+            <h1>&Auml;ndra bulletin</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -28,23 +28,16 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                            <tr class="prop">
-	                            <td valign="top" class="name">Id:</td>
-	                            
-	                            <td valign="top" class="value">${fieldValue(bean:bulletinInstance, field:'id')}</td>
-	                        </tr>
-	                    
 	                        <tr class="prop">
-	                            <td valign="top" class="name">Name:</td>
-	                            
-	                            <td valign="top" class="value">${fieldValue(bean:bulletinInstance, field:'name')}</td>
+	                            <td class="name">Filnamn</td>
+	                            <td class="value">${fieldValue(bean:bulletinInstance, field:'name')}</td>
 	                        </tr>
 
                             <tr class="prop">
-                                <td valign="top" class="description">
-                                    <label for="description">Description:</label>
+                                <td class="description">
+                                    <label for="description">Beskrivning</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:bulletinInstance,field:'description','errors')}">
+                                <td class="value ${hasErrors(bean:bulletinInstance,field:'description','errors')}">
                                     <input type="text" id="description" name="description" value="${fieldValue(bean:bulletinInstance,field:'description')}"/>
                                 </td>
                             </tr> 
@@ -52,8 +45,8 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+                    <span class="button"><g:actionSubmit class="save" value="Spara" /></span>
+                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Är du säker?');" value="Ta bort" /></span>
                 </div>
             </g:form>
         </div>
