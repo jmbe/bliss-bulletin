@@ -12,6 +12,8 @@ class BulletinAdminController {
 
     def list = {
         params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
+        params.sort = "id"
+        params.order = "desc"
         [ bulletinInstanceList: Bulletin.list( params ), bulletinInstanceTotal: Bulletin.count() ]
     }
 

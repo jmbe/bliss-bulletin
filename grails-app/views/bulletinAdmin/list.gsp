@@ -22,13 +22,15 @@
                         
                    	        <g:sortableColumn property="id" title="Id" />
                         
-                   	        <g:sortableColumn property="name" title="Name" />
+                   	        <g:sortableColumn property="name" title="Filnamn" />
 
-                   	        <g:sortableColumn property="description" title="Description" />
+                   	        <g:sortableColumn property="description" title="Beskrivning" />
 
 							<g:sortableColumn property="nDownloads" title="Nedladdningar" />
 
-                   	        <g:sortableColumn property="visible" title="Visible" />
+							<g:sortableColumn property="dateCreated" title="Datum" />
+
+                   	        <g:sortableColumn property="visible" title="Visa" />
                         
                         </tr>
                     </thead>
@@ -43,6 +45,8 @@
                             <td>${fieldValue(bean:bulletinInstance, field:'description')}</td>
 
                             <td>${fieldValue(bean:bulletinInstance, field:'nDownloads')}</td>
+
+                            <td>${fieldValue(bean:bulletinInstance, field:'dateCreated')}</td>
 
                             <td><g:link action="toggleVisible" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'visible')}</g:link></td>
                         

@@ -5,8 +5,7 @@ class BulletinController {
     }
 
     def list = {
-        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
-        [ bulletinInstanceList: Bulletin.findAllByVisible(true), bulletinInstanceTotal: Bulletin.count() ]
+        [ bulletinInstanceList: Bulletin.findAllByVisible(true,[sort:"id", order:"desc"]), bulletinInstanceTotal: Bulletin.count() ]
     }
     
     def data = {
