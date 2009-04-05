@@ -10,17 +10,9 @@ class BulletinService {
 		//file.parentFile.mkdirs()
 		//downloadedfile.transferTo(file)
 		
-		def data = getDataBytes(downloadedfile.inputStream, (int)downloadedfile.size)
+		def data = downloadedfile.getBytes()
 		def bulletin = new Bulletin(name: filename, data: data, description: "").save()
     }
-    
-	def getDataBytes(stream, length) {
-		byte [] data = new byte [length]
-		if(stream.read(data, 0, length) < length) {
-			logger.error("n bytes read from stream where fewer than requested.")
-		}
-		return data
-	}
     
     def delete(bulletin) {
     	bulletin.delete()
