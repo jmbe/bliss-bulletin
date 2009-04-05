@@ -46,7 +46,7 @@
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" value="Spara" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Är du säker?');" value="Ta bort" /></span>
+                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Ta bort bulletinen?');" value="Ta bort" /></span>
                 </div>
             </g:form>
         </div>
