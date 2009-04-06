@@ -4,7 +4,7 @@ beans = {
 		    realmName = 'Bliss bulletin'
 		}
 		
-			if (["development", "production"].contains(Environment.current.name)) {						println("Using overridden datasource from resources.groovy.")
+			if ([Environment.DEVELOPMENT, Environment.PRODUCTION].contains(Environment.current)) {						println("Using overridden datasource from resources.groovy since the environment is ${Environment.current.name}.")
 		
 			dataSource(org.apache.commons.dbcp.BasicDataSource) { bean ->
 				bean.destroyMethod = "close"
