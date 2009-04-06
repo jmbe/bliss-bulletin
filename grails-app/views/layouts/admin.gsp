@@ -7,6 +7,7 @@
         <g:javascript library="application" />				
     </head>
     <body>
+    	<h1 style="margin-left:15px; font-size: xx-large;">Blissbulletin Admin</h1>
         <g:layoutBody />		
     </body>	
 </html>
