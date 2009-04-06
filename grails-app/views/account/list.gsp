@@ -1,16 +1,15 @@
 <head>
-	<meta name="layout" content="main" />
-	<title>Account List</title>
+	<meta name="layout" content="admin" />
+	<title><g:message code="admin.account.list.title"/></title>
 </head>
 
 <body>
-
-	<div class="nav">
-		<span class="menuButton"><g:link class="create" action="create">New Account</g:link></span>
-	</div>
+	<g:applyLayout name="adminNav">
+		<span class="menuButton"><g:link class="create" action="create"><g:message code="admin.account.create.title"/></g:link></span>
+	</g:applyLayout>
 
 	<div class="body">
-		<h1>Account List</h1>
+		<h1><g:message code="admin.account.list.title"/></h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -18,11 +17,11 @@
 			<table>
 			<thead>
 				<tr>
-					<g:sortableColumn property="id" title="Id" />
-					<g:sortableColumn property="username" title="Login Name" />
-					<g:sortableColumn property="userRealName" title="Full Name" />
-					<g:sortableColumn property="enabled" title="Enabled" />
-					<g:sortableColumn property="description" title="Description" />
+					<g:sortableColumn property="id" titleKey="admin.account.id" />
+					<g:sortableColumn property="username" titleKey="admin.account.username" />
+					<g:sortableColumn property="userRealName" titleKey="admin.account.name" />
+					<g:sortableColumn property="enabled" titleKey="admin.account.enabled" />
+					<g:sortableColumn property="description" titleKey="admin.account.description" />
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -36,7 +35,7 @@
 					<td>${person.description?.encodeAsHTML()}</td>
 					<td class="actionButtons">
 						<span class="actionButton">
-							<g:link action="show" id="${person.id}">Show</g:link>
+							<g:link action="show" id="${person.id}"><g:message code="admin.account.show"/></g:link>
 						</span>
 					</td>
 				</tr>

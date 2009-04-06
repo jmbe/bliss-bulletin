@@ -1,16 +1,13 @@
 <head>
-	<meta name="layout" content="main" />
-	<title>Create Account</title>
+	<meta name="layout" content="admin" />
+	<title>Nytt administratörskonto</title>
 </head>
 
 <body>
-
-	<div class="nav">
-		<span class="menuButton"><g:link class="list" action="list">Account List</g:link></span>
-	</div>
+	<g:applyLayout name="adminNav" />
 
 	<div class="body">
-		<h1>Create Account</h1>
+		<h1>Nytt administratörskonto</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -25,35 +22,35 @@
 				<tbody>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="username">Login Name:</label></td>
+						<td valign="top" class="name"><label for="username">Användarnamn:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'username','errors')}">
 							<input type="text" id="username" name="username" value="${person.username?.encodeAsHTML()}"/>
 						</td>
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="userRealName">Full Name:</label></td>
+						<td valign="top" class="name"><label for="userRealName">Namn:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'userRealName','errors')}">
 							<input type="text" id="userRealName" name="userRealName" value="${person.userRealName?.encodeAsHTML()}"/>
 						</td>
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="passwd">Password:</label></td>
+						<td valign="top" class="name"><label for="passwd">Lösenord:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'passwd','errors')}">
 							<input type="password" id="passwd" name="passwd" value="${person.passwd?.encodeAsHTML()}"/>
 						</td>
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="enabled">Enabled:</label></td>
+						<td valign="top" class="name"><label for="enabled">Aktiv:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'enabled','errors')}">
 							<g:checkBox name="enabled" value="${person.enabled}" ></g:checkBox>
 						</td>
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="description">Description:</label></td>
+						<td valign="top" class="name"><label for="description">Beskrivning:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'description','errors')}">
 							<input type="text" id="description" name="description" value="${person.description?.encodeAsHTML()}"/>
 						</td>
@@ -67,14 +64,14 @@
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="emailShow">Show Email:</label></td>
+						<td valign="top" class="name"><label for="emailShow">Visa email:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'emailShow','errors')}">
 							<g:checkBox name="emailShow" value="${person.emailShow}"/>
 						</td>
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name" align="left">Assign Roles:</td>
+						<td valign="top" class="name" align="left">Roller:</td>
 					</tr>
 
 					<g:each var="auth" in="${authorityList}">
@@ -89,7 +86,7 @@
 			</div>
 
 			<div class="buttons">
-				<span class="button"><input class="save" type="submit" value="Create" /></span>
+				<span class="button"><input class="save" type="submit" value="Skapa" /></span>
 			</div>
 
 		</g:form>

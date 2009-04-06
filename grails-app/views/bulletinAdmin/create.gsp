@@ -1,17 +1,14 @@
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />
-        <title>Ladda upp bulletin</title>         
+        <meta name="layout" content="admin" />
+        <title><g:message code="admin.bulletin.create.title"/></title>         
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><g:link class="list" action="list">Bulletinlista</g:link></span>
-        </div>
+    	<g:applyLayout name="adminNav" />
+
         <div class="body">
-            <h1>Ladda upp bulletin</h1>
+            <h1><g:message code="admin.bulletin.create.title"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -27,7 +24,7 @@
                         
                             <tr class="prop">
                                 <td class="name">
-                                    <label for="file">Bulletinfil</label>
+                                    <label for="file"><g:message code="admin.bulletin.file"/></label>
                                 </td>
                                 <td  class="value">
                                     <input id="file" type="file" name="bulletin" />
@@ -35,7 +32,7 @@
                             </tr>
                             <tr>
                             	<td valign="middle" class="name">
-                                    <label for="description">Beskrivning</label>
+                                    <label for="description"><g:message code="admin.bulletin.description"/></label>
                                 </td>
                             	<td>
                             		<input type="text" id="description" name="description"/>
@@ -45,7 +42,7 @@
                     </table>
                 </div>
                 <div class="buttons" style="text-align: right;">
-                    <span class="button"><input class="save" type="submit" value="Ladda upp" /></span>
+                    <span class="button"><input class="save" type="submit" value="${message(code:'admin.bulletin.upload')}" /></span>
                 </div>
             </g:form>
         </div>

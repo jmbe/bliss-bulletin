@@ -3,16 +3,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />
-        <title>Edit Bulletin</title>
+        <meta name="layout" content="admin" />
+        <title><g:message code="admin.bulletin.edit.title"/></title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><g:link class="list" action="list">Bulletinlista</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">Ladda upp bulletin</g:link></span>
-        </div>
+    	<g:applyLayout name="adminNav">
+            <span class="menuButton"><g:link class="create" action="create"><g:message code="admin.bulletin.create.title"/></g:link></span>
+    	</g:applyLayout>
         <div class="body">
-            <h1>&Auml;ndra bulletin</h1>
+            <h1><g:message code="admin.bulletin.edit.title"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -29,13 +28,13 @@
                     <table>
                         <tbody>
 	                        <tr class="prop">
-	                            <td class="name">Filnamn</td>
+	                            <td class="name"><g:message code="admin.bulletin.filename"/></td>
 	                            <td class="value">${fieldValue(bean:bulletinInstance, field:'name')}</td>
 	                        </tr>
 
                             <tr class="prop">
                                 <td class="description">
-                                    <label for="description">Beskrivning</label>
+                                    <label for="description"><g:message code="admin.bulletin.description"/></label>
                                 </td>
                                 <td class="value ${hasErrors(bean:bulletinInstance,field:'description','errors')}">
                                     <input type="text" id="description" name="description" value="${fieldValue(bean:bulletinInstance,field:'description')}"/>
@@ -45,8 +44,8 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit action="update" class="save" value="Spara" /></span>
-                    <span class="button"><g:actionSubmit action="delete" class="delete" onclick="return confirm('Ta bort bulletinen?');" value="Ta bort" /></span>
+                    <span class="button"><g:actionSubmit action="update" class="save" value="${message(code:'admin.bulletin.save')}" /></span>
+                    <span class="button"><g:actionSubmit action="delete" class="delete" onclick="return confirm('Ta bort bulletinen?');" value="${message(code:'admin.bulletin.delete')}" /></span>
                 </div>
             </g:form>
         </div>

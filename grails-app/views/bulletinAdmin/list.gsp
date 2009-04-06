@@ -3,15 +3,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />
-        <title>Bulletinlista</title>
+        <meta name="layout" content="admin" />
+        <title><g:message code="admin.bulletin.list.title"/></title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><g:link class="create" action="create">Ladda upp bulletin</g:link></span>
-        </div>
+    	<g:applyLayout name="adminNav">
+            <span class="menuButton"><g:link class="create" action="create"><g:message code="admin.bulletin.create.title"/></g:link></span>
+    	</g:applyLayout>
         <div class="body">
-            <h1>Bulletinlista</h1>
+            <h1><g:message code="admin.bulletin.list.title"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -20,15 +20,15 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="name" title="Filnamn" />
+                   	        <g:sortableColumn property="name" titleKey="admin.bulletin.filename" />
 
-                   	        <g:sortableColumn property="description" title="Beskrivning" />
+                   	        <g:sortableColumn property="description" titleKey="admin.bulletin.description" />
 
-							<g:sortableColumn property="nDownloads" title="Nedladdningar" />
+							<g:sortableColumn property="nDownloads" titleKey="admin.bulletin.downloads" />
 
-							<g:sortableColumn property="dateCreated" title="Datum" />
+							<g:sortableColumn property="dateCreated" titleKey="admin.bulletin.date" />
 
-                   	        <g:sortableColumn property="visible" title="Visa" />
+                   	        <g:sortableColumn property="visible" titleKey="admin.bulletin.show" />
                         
                         </tr>
                     </thead>
