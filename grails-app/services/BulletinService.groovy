@@ -9,6 +9,10 @@ class BulletinService {
 		
 		def data = downloadedfile.getBytes()
 		def bulletin = new Bulletin(name: filename, data: data, description: description).save()
+
+		if (!bulletin) {
+			println "Bulletin could not be saved!"
+		}
     }
     
     def delete(bulletin) {

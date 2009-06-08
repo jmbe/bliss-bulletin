@@ -7,7 +7,8 @@ class Bulletin {
 	Date dateCreated
 	
 	static constraints = {
-		data(size: 0..10000000)
+		/* MySQL max packet size is normally 16 MB so data is limited to that for now. */
+		data(size: 0..16000000)
 		dateCreated(nullable: true)
 	}
 }
