@@ -20,7 +20,7 @@
                 <g:renderErrors bean="${bulletinInstance}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form method="post" >
+            <g:form method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="${bulletinInstance?.id}" />
                 <input type="hidden" name="version" value="${bulletinInstance?.version}" />
                 <input type="hidden" name="name" value="${bulletinInstance?.name}"/>
@@ -38,6 +38,14 @@
                                 </td>
                                 <td class="value ${hasErrors(bean:bulletinInstance,field:'description','errors')}">
                                     <input type="text" id="description" name="description" value="${fieldValue(bean:bulletinInstance,field:'description')}"/>
+                                </td>
+                            </tr> 
+                            <tr class="prop">
+                                <td class="file">
+                                    <label for="coverPage"><g:message code="admin.bulletin.coverPage"/></label>
+                                </td>
+                                <td class="value ${hasErrors(bean:bulletinInstance,field:'coverPage','errors')}">
+                                    <input type="file" id="coverPage" name="coverPage" />
                                 </td>
                             </tr> 
                         </tbody>

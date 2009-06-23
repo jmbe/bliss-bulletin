@@ -11,10 +11,14 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            
+            <div>
+            </div>
             <g:each in="${bulletinInstanceList}" status="i" var="bulletinInstance">
 	            <ul id="bulletin-list">
-	            	<li><g:link action="data" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'description')}</g:link></li>
+	            	<li><img class="coverPage" 
+	            			 src="${createLink(action:'coverPage', id:bulletinInstance.id)}" 
+	            			 alt="${message(code:'bulletin.coverPage')}"/>
+	            	 	<g:link action="data" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'description')}</g:link></li>
 	            </ul>
 	        </g:each>
             

@@ -19,6 +19,7 @@
                 <table>
                     <thead>
                         <tr>
+                        	<th><g:message code="admin.bulletin.coverPage"/></th>
                         
                    	        <g:sortableColumn property="name" titleKey="admin.bulletin.filename" />
 
@@ -35,7 +36,8 @@
                     <tbody>
                     <g:each in="${bulletinInstanceList}" status="i" var="bulletinInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                        
+                        	<td><img class="coverPage" src="${createLink(controller:'bulletin', action:'coverPage', id:bulletinInstance.id)}" alt="${message(code:'bulletin.coverPage')}"/></td>
+                        	
                             <td><g:link action="show" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'name')}</g:link></td>
                         
                             <td>${fieldValue(bean:bulletinInstance, field:'description')}</td>

@@ -24,10 +24,18 @@
                         
                             <tr class="prop">
                                 <td class="name">
-                                    <label for="file"><g:message code="admin.bulletin.file"/></label>
+                                    <label for="bulletin"><g:message code="admin.bulletin.file"/></label>
                                 </td>
                                 <td  class="value">
-                                    <input id="file" type="file" name="bulletin" />
+                                    <input id="bulletin" type="file" name="bulletin" />
+                                </td>
+                            </tr>
+                            <tr class="prop">
+                                <td class="name">
+                                    <label for="coverPage"><g:message code="admin.bulletin.coverPage"/></label>
+                                </td>
+                                <td  class="value">
+                                    <input id="coverPage" type="file" name="coverPage" />
                                 </td>
                             </tr>
                             <tr>

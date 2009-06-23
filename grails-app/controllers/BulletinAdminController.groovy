@@ -61,7 +61,14 @@ class BulletinAdminController {
                     return
                 }
             }
+            def coverPage = request.getFile('coverPage').getBytes()
+            if(coverPage == null) {
+            	coverPage = bulletinInstance.coverPage
+           	}
+            
             bulletinInstance.properties = params
+            bulletinInstance.coverPage = coverPage
+            
             if(!bulletinInstance.hasErrors() && bulletinInstance.save()) {
                 flash.message = "Bulletin ${bulletinInstance.name} uppdaterad"
                 //redirect(action:show,id:bulletinInstance.id)
@@ -85,8 +92,9 @@ class BulletinAdminController {
 
     def save = {
     	def downloadedfile = request.getFile('bulletin')
+    	def coverPage = request.getFile('coverPage')
     	def description = params['description']
-    	bulletinService.create(downloadedfile, description)
+    	bulletinService.create(downloadedfile, coverPage, description)
     	flash.message = "The bulletin was created"
 		redirect(action:list,params:params)
     }

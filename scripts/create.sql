@@ -58,6 +58,7 @@ CREATE TABLE `bulletin` (
   `id` bigint(20) NOT NULL auto_increment,
   `version` bigint(20) NOT NULL,
   `data` mediumblob NOT NULL,
+  `cover_age` mediumblob NOT NULL,
   `n_downloads` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `visible` bit(1) NOT NULL,

@@ -17,4 +17,11 @@ class BulletinController {
     	response.setHeader("Content-Disposition", "attachment; filename=\"" + bulletin.name + "\"")
     	response.outputStream << bulletin.data
     }
+    
+    def coverPage = {
+    	def bulletin = Bulletin.get( params.id )
+    	
+    	println "Showing the coverPage image"
+    	response.outputStream << bulletin.coverPage
+    }
 }
