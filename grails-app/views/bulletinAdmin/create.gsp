@@ -54,6 +54,14 @@
                             		<input type="text" id="description" name="description" value="${params['description']}"/>
                             	</td>
                             </tr>
+                            <tr>
+                            	<td valign="middle" class="name">
+                                    <label for="buttercupPath"><g:message code="admin.bulletin.buttercupPath"/></label>
+                                </td>
+                            	<td>
+                            		<input type="text" id="buttercupPath" name="buttercupPath" value="${params['buttercupPath']}"/>
+                            	</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -4,16 +4,13 @@ class BulletinService {
 
     boolean transactional = true
 
-    def create(downloadedfile, coverPage, description) {
+    def create(downloadedfile, coverPage, description, buttercupPath) {
     	def filename = downloadedfile.originalFilename
 		
 		def data = downloadedfile.getBytes()
-		def bulletin = new Bulletin(name: filename, data: data, coverPage:coverPage, description: description)
+		def bulletin = new Bulletin(name: filename, data: data, coverPage:coverPage, description: description, buttercupPath: buttercupPath)
 
-		if(!bulletin.save()) {
-			return bulletin.errors
-		}
-		return
+		bulletin.save()
     }
     
     def delete(bulletin) {

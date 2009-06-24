@@ -33,11 +33,19 @@
 	                        </tr>
 
                             <tr class="prop">
-                                <td class="description">
+                                <td class="name">
                                     <label for="description"><g:message code="admin.bulletin.description"/></label>
                                 </td>
                                 <td class="value">
                                     <input type="text" id="description" name="description" value="${fieldValue(bean:bulletinInstance,field:'description')}"/>
+                                </td>
+                            </tr> 
+                            <tr class="prop">
+                                <td class="name">
+                                    <label for="buttercupPath"><g:message code="admin.bulletin.buttercupPath"/></label>
+                                </td>
+                                <td class="value">
+                                    <input type="text" id="buttercupPath" name="buttercupPath" value="${fieldValue(bean:bulletinInstance,field:'buttercupPath')}"/>
                                 </td>
                             </tr> 
                             <tr class="prop">

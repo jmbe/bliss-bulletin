@@ -1,6 +1,7 @@
 class Bulletin {
 	String name
 	String description
+	String buttercupPath
 	byte[] coverPage
 	byte[] data
 	boolean visible
@@ -18,5 +19,6 @@ class Bulletin {
 			 	return (it.length > 0)
 			 })
 		dateCreated(nullable: true)
+		buttercupPath(nullable: true)
 	}
 }

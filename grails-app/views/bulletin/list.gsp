@@ -15,10 +15,15 @@
             </div>
             <g:each in="${bulletinInstanceList}" status="i" var="bulletinInstance">
 	            <ul id="bulletin-list">
-	            	<li><img class="coverPage" 
+	            	<li>
+	            		<img class="coverPage" 
 	            			 src="${createLink(action:'coverPage', id:bulletinInstance.id)}" 
 	            			 alt="${message(code:'bulletin.coverPage')}"/>
-	            	 	<g:link action="data" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'description')}</g:link></li>
+	            	 	<g:link action="data" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'description')}</g:link>
+	            	 	<g:if test="${bulletinInstance.buttercupPath}">
+	            	 		<a href="${bulletinInstance.buttercupPath}"><g:message code="bulletin.buttercupPath"/></a>
+	            	 	</g:if>
+	            	 </li>
 	            </ul>
 	        </g:each>
             

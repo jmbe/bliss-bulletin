@@ -25,6 +25,8 @@
 
                    	        <g:sortableColumn property="description" titleKey="admin.bulletin.description" />
 
+                   	        <g:sortableColumn property="buttercupPath" titleKey="admin.bulletin.buttercupPath" />
+
 							<g:sortableColumn property="nDownloads" titleKey="admin.bulletin.downloads" />
 
 							<g:sortableColumn property="dateCreated" titleKey="admin.bulletin.date" />
@@ -42,6 +44,8 @@
                         
                             <td>${fieldValue(bean:bulletinInstance, field:'description')}</td>
 
+                            <td>${fieldValue(bean:bulletinInstance, field:'buttercupPath')}</td>
+                            
                             <td>${fieldValue(bean:bulletinInstance, field:'nDownloads')}</td>
 
                             <td>${fieldValue(bean:bulletinInstance, field:'dateCreated')}</td>

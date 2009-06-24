@@ -104,7 +104,7 @@ class BulletinAdminController {
     	def downloadedfile = request.getFile('bulletin')
     	def coverPage = request.getFile('coverPage')
 		def description = params['description']
-    	//TODO Validate that coverPage and bulletin file is not null
+		def buttercupPath = params['buttercupPath']
 		
 		def errors = []
 		if(downloadedfile.getBytes().length <= 0) {
@@ -126,7 +126,7 @@ class BulletinAdminController {
 			}
 			redirect action:create, params:params
 		} else {
-	    	bulletinService.create(downloadedfile, coverPage, description)
+	    	bulletinService.create(downloadedfile, coverPage, description, buttercupPath)
 			flash.message = "The bulletin was created"
 			redirect(action:list,params:params)
 		}
