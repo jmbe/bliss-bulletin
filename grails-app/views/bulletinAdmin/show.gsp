@@ -36,8 +36,16 @@
                                 <td class="description">
                                     <label for="description"><g:message code="admin.bulletin.description"/></label>
                                 </td>
-                                <td class="value ${hasErrors(bean:bulletinInstance,field:'description','errors')}">
+                                <td class="value">
                                     <input type="text" id="description" name="description" value="${fieldValue(bean:bulletinInstance,field:'description')}"/>
+                                </td>
+                            </tr> 
+                            <tr class="prop">
+                                <td class="file">
+                                    <label for="bulletin"><g:message code="admin.bulletin.filename"/></label>
+                                </td>
+                                <td class="value">
+                                    <input type="file" id="bulletin" name="bulletin" />
                                 </td>
                             </tr> 
                             <tr class="prop">
