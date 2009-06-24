@@ -16,5 +16,5 @@ beans = {
 				testOnBorrow = "true"
 				validationQuery = "SELECT 1 FROM DUAL;"
 				defaultAutoCommit = "false"
-			}		}		
+			}		}					        // multipartResolver(org.springframework.web.multipart.commons.CommonsMultipartResolver) {	        //  maxUploadSize = 100 * 1024 * 1024	        // }		
 }
