@@ -12,11 +12,19 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            <g:hasErrors bean="${bulletinInstance}">
+            
+            <g:if test="${params['errors'] || params['error']}">
             <div class="errors">
-                <g:renderErrors bean="${bulletinInstance}" as="list" />
+            	<g:if test="${params['errors']}">
+                <g:each in="${params['errors']}">
+                	<p>${it}</p>
+                </g:each>
+            	</g:if>
+            	<g:else>
+            		<p>${params['error']}</p>
+            	</g:else>
             </div>
-            </g:hasErrors>
+            </g:if>
             <g:form action="save" method="post" enctype="multipart/form-data">
                 <div class="dialog">
                     <table>
@@ -43,7 +51,7 @@
                                     <label for="description"><g:message code="admin.bulletin.description"/></label>
                                 </td>
                             	<td>
-                            		<input type="text" id="description" name="description"/>
+                            		<input type="text" id="description" name="description" value="${params['description']}"/>
                             	</td>
                             </tr>
                         </tbody>
