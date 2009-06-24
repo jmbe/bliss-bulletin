@@ -108,13 +108,13 @@ class BulletinAdminController {
 		
 		def errors = []
 		if(downloadedfile.getBytes().length <= 0) {
-			errors.add "bulletin.data.missing"
+			errors.add "bulletin.errors.data.missing"
 		}
 		if(coverPage.getBytes().length <= 0) {
-			errors.add "bulletin.coverPage.missing"
+			errors.add "bulletin.errors.coverPage.missing"
 		}
 		if(!description) {
-			errors.add bulletin.description.missing
+			errors.add "bulletin.errors.description.missing"
 		}
 
 		if(!errors.isEmpty()) {

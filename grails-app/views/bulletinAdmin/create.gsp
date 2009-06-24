@@ -17,11 +17,11 @@
             <div class="errors">
             	<g:if test="${params['errors']}">
                 <g:each in="${params['errors']}">
-                	<p>${it}</p>
+                	<p><g:message code="${it}"/></p>
                 </g:each>
             	</g:if>
             	<g:else>
-            		<p>${params['error']}</p>
+            		<p><g:message code="${params['error']}"/></p>
             	</g:else>
             </div>
             </g:if>
