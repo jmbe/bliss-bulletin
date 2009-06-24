@@ -13,7 +13,6 @@ class BulletinController {
 
     	bulletin.nDownloads++
     	
-    	println "Getting file content " + bulletin.name;
     	response.setHeader("Content-Disposition", "attachment; filename=\"" + bulletin.name + "\"")
     	response.outputStream << bulletin.data
     }
@@ -21,7 +20,6 @@ class BulletinController {
     def coverPage = {
     	def bulletin = Bulletin.get( params.id )
     	
-    	println "Showing the coverPage image"
     	response.outputStream << bulletin.coverPage
     }
 }
