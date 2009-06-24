@@ -59,6 +59,7 @@ CREATE TABLE `bulletin` (
   `version` bigint(20) NOT NULL,
   `data` mediumblob NOT NULL,
   `cover_age` mediumblob NOT NULL,
+	`buttercup_path` varchar(255) default NULL,
   `n_downloads` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `visible` bit(1) NOT NULL,
