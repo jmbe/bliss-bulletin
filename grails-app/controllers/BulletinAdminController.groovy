@@ -1,4 +1,4 @@
-import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+import org.springframework.security.annotation.Secured
 
 @Secured(['ROLE_ADMIN'])
 class BulletinAdminController {
@@ -18,11 +18,12 @@ class BulletinAdminController {
     def show = {
         def bulletinInstance = Bulletin.get( params.id )
 
-        if(!bulletinInstance) {
-            flash.message = "Bulletin not found with id ${params.id}"
-            redirect(action:list)
-        }
-        else { return [ bulletinInstance : bulletinInstance ] }
+      if (!bulletinInstance) {
+        flash.message = "Bulletin not found with id ${params.id}"
+        redirect(action: list)
+      } else { 
+        [bulletinInstance: bulletinInstance]
+      }
     }
 	
 	def toggleVisible = {
@@ -117,7 +118,7 @@ class BulletinAdminController {
 			errors.add "bulletin.errors.description.missing"
 		}
 
-		if(!errors.isEmpty()) {
+        if(!errors.isEmpty()) {
 			flash.message = "There where errors"
 			if(errors.size() > 1) {
 				params['errors'] = errors

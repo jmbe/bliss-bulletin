@@ -1,8 +1,10 @@
 *.log
 *~
 *.war
+*.launch
 web-app/WEB-INF/classes/
 plugins
 target
 test
 
+*.iml
