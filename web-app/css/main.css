@@ -276,3 +276,6 @@ ul#bulletin-list {
 img.coverPage {
 }
 
+input.toggleVisible:hover {
+    background-color: #006dba;
+}

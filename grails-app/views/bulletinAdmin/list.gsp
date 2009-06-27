@@ -48,7 +48,12 @@
 
                             <td>${fieldValue(bean:bulletinInstance, field:'dateCreated')}</td>
 
-                            <td><g:link action="toggleVisible" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'visible')}</g:link></td>
+                            <td>
+                              <g:form action="toggleVisible">
+                                <g:hiddenField name="id" value="${bulletinInstance.id}"/>
+                                <g:submitButton class="toggleVisible" name="toggleVisible" value="${fieldValue(bean:bulletinInstance, field:'visible')}"/>
+                              </g:form>
+                            </td>
                         
                         </tr>
                     </g:each>
