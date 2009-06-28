@@ -46,6 +46,14 @@
                                     <input id="coverPage" type="file" name="coverPage" />
                                 </td>
                             </tr>
+							<tr>
+                            	<td valign="middle" class="name">
+                                    <label for="title"><g:message code="admin.bulletin.title"/></label>
+                                </td>
+                            	<td>
+                            		<input type="text" id="title" name="title" value="${params['title']}"/>
+                            	</td>
+                            </tr>
                             <tr>
                             	<td valign="middle" class="name">
                                     <label for="description"><g:message code="admin.bulletin.description"/></label>

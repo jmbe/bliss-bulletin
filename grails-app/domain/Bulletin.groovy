@@ -1,5 +1,6 @@
 class Bulletin {
 	String name
+	String title
 	String description
 	String buttercupPath
 	byte[] coverPage

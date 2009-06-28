@@ -1,0 +1,47 @@
+/*** RESET BROWSER ***/
+html{height:100%;}
+body{height:100%;}
+*{margin:0;}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.clearfix{display:inline-block;}
+* html .clearfix{height:1%;}
+th,td{font-weight:normal;font-size:1em;}
+body,form,ol,ul,li,dd,dt,dl,td,th,tr {margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,p,pre,blockquote,adress {margin:0 0 0.25em 0;padding:0;}
+h1,h2,h3,h4,h5,h6 {line-height:1.1em;}
+ul {list-style:none;}
+ol {margin-bottom:1em;}
+img {border:0;}
+fieldset {margin:0;padding:0;border:0;}
+input,select,textarea {vertical-align:middle;font-family:"lucida grande",tahoma,verdana,arial,sans-serif}
+table {border-collapse:collapse;border-spacing:0;empty-cells:show;font-size:1em;}
+a:focus {outline:0;}
+*:focus {outline:0;}
+p {margin-top:5px;margin-bottom:5px;}
+
+/*** GENERIC ***/
+a, a:visited {color: #cc3300;text-decoration: underline;}
+a:hover {color: #cc3300;text-decoration: underline;}
+.clear {clear:both;height:0px;}
+.dimmed {color:#999999;}
+p.summary {margin-bottom:20px;}
+h2 {font-size:1.4em;}
+
+/*** DOCUMENT BODY ***/
+body {color:#333333;font-family:helvetica,arial,sans-serif;padding:0;margin:0;font-size:13px;background:#e7e7e7;}
+
+/*** MAIN LAYOUT ***/
+.wrapper {text-align:left;padding:15px;width:800px;margin:15px auto 15px auto;position:relative;min-height:100%;background:#ffffff;}
+.content {width:800px;}
+.header {height:100px;overflow:hidden;}
+.mid {padding:25px;background-image:url(../images/bg_fade.jpg);background-repeat:repeat-x;}
+.intro {height:100px;}
+.readspeaker {float:right;margin-top:6px;}
+
+/*** ISSUES LIST ***/
+.issue {padding:10px 0 10px 0;border-bottom:1px solid #e0e0e0;}
+.issue img.thumbnail, .issue div.thumbnail {float:left;width:150px;text-align:center;padding:2px;border:1px solid #e0e0e0;}
+.issue div.issue_info {margin-left:175px;padding:15px 0 0 0;}
+.icon_text {background-position:0px 1px;background-repeat:no-repeat;padding:10px 0 10px 40px;display:inline-block;font-weight:bold;font-size:14px;}
+.icon_text.pdf {background-image:url(../images/pdf_icon.png);}
+.icon_text.opf {background-image:url(../images/opf_icon.png);}

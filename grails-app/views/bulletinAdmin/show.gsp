@@ -34,6 +34,15 @@
 
                             <tr class="prop">
                                 <td class="name">
+                                    <label for="title"><g:message code="admin.bulletin.title"/></label>
+                                </td>
+                                <td class="value">
+                                    <input type="text" id="title" name="title" value="${fieldValue(bean:bulletinInstance,field:'title')}"/>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td class="name">
                                     <label for="description"><g:message code="admin.bulletin.description"/></label>
                                 </td>
                                 <td class="value">

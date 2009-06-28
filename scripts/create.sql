@@ -59,9 +59,11 @@ CREATE TABLE `bulletin` (
   `version` bigint(20) NOT NULL,
   `data` mediumblob NOT NULL,
   `cover_age` mediumblob NOT NULL,
-	`buttercup_path` varchar(255) default NULL,
+  `buttercup_path` varchar(255) default NULL,
   `n_downloads` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `title` varchar(255) default NULL,
+  `description` varchar(255) default NULL,		
   `visible` bit(1) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;

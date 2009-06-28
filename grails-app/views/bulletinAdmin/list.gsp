@@ -21,6 +21,8 @@
                         
                    	        <g:sortableColumn property="name" titleKey="admin.bulletin.filename" />
 
+	                        <g:sortableColumn property="title" titleKey="admin.bulletin.title" />   
+
                    	        <g:sortableColumn property="description" titleKey="admin.bulletin.description" />
 
                    	        <g:sortableColumn property="buttercupPath" titleKey="admin.bulletin.buttercupPath" />
@@ -34,24 +36,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${bulletinInstanceList}" status="i" var="bulletinInstance">
+                    <g:each in="${bulletinInstanceList}" status="i" var="bulletin">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                        	<td><img class="coverPage" src="${createLink(controller:'bulletin', action:'coverPage', id:bulletinInstance.id)}" alt="${message(code:'bulletin.coverPage')}"/></td>
+                        	<td><img class="coverPage" src="${createLink(controller:'bulletin', action:'coverPage', id:bulletin.id)}" alt="${message(code:'bulletin.coverPage')}"/></td>
                         	
-                            <td><g:link action="show" id="${bulletinInstance.id}">${fieldValue(bean:bulletinInstance, field:'name')}</g:link></td>
-                        
-                            <td>${fieldValue(bean:bulletinInstance, field:'description')}</td>
+                            <td><g:link action="show" id="${bulletin.id}">${fieldValue(bean:bulletin, field:'name')}</g:link></td>
 
-                            <td>${fieldValue(bean:bulletinInstance, field:'buttercupPath')}</td>
+	                        <td>${fieldValue(bean:bulletin, field:'title')}</td>
+
+                            <td>${fieldValue(bean:bulletin, field:'description')}</td>
+
+                            <td>${fieldValue(bean:bulletin, field:'buttercupPath')}</td>
                             
-                            <td>${fieldValue(bean:bulletinInstance, field:'nDownloads')}</td>
+                            <td>${fieldValue(bean:bulletin, field:'nDownloads')}</td>
 
-                            <td>${fieldValue(bean:bulletinInstance, field:'dateCreated')}</td>
+                            <td>${fieldValue(bean:bulletin, field:'dateCreated')}</td>
 
                             <td>
                               <g:form action="toggleVisible">
-                                <g:hiddenField name="id" value="${bulletinInstance.id}"/>
-                                <g:submitButton class="toggleVisible" name="toggleVisible" value="${fieldValue(bean:bulletinInstance, field:'visible')}"/>
+                                <g:hiddenField name="id" value="${bulletin.id}"/>
+                                <g:submitButton class="toggleVisible" name="toggleVisible" value="${fieldValue(bean:bulletin, field:'visible')}"/>
                               </g:form>
                             </td>
                         

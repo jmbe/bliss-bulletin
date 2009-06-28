@@ -104,6 +104,7 @@ class BulletinAdminController {
     def save = {
     	def downloadedfile = request.getFile('bulletin')
     	def coverPage = request.getFile('coverPage')
+	    def title = params['title']
 		def description = params['description']
 		def buttercupPath = params['buttercupPath']
 		
@@ -113,6 +114,9 @@ class BulletinAdminController {
 		}
 		if(coverPage.getBytes().length <= 0) {
 			errors.add "bulletin.errors.coverPage.missing"
+		}
+	    if(!title) {
+			errors.add "bulletin.errors.title.missing"
 		}
 		if(!description) {
 			errors.add "bulletin.errors.description.missing"
@@ -127,7 +131,7 @@ class BulletinAdminController {
 			}
 			redirect action:create, params:params
 		} else {
-	    	bulletinService.create(downloadedfile, coverPage, description, buttercupPath)
+	    	bulletinService.create(downloadedfile, coverPage, title, description, buttercupPath)
 			flash.message = "The bulletin was created"
 			redirect(action:list,params:params)
 		}
