@@ -36,6 +36,7 @@
 					</div>
 				</div>
 			</g:each>
+            <div class="footer"></div>
 		</div>
 	</div>
 </div>

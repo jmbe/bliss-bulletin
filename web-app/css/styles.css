@@ -45,3 +45,10 @@ body {color:#333333;font-family:helvetica,arial,sans-serif;padding:0;margin:0;fo
 .icon_text {background-position:0px 1px;background-repeat:no-repeat;padding:10px 0 10px 40px;display:inline-block;font-weight:bold;font-size:14px;}
 .icon_text.pdf {background-image:url(../images/pdf_icon.png);}
 .icon_text.opf {background-image:url(../images/opf_icon.png);}
+
+
+/** Footer **/
+.footer {
+    background: url(http://pictoonline.pictogram.se/images/spsm-sv.gif) right 20px no-repeat;
+    height: 200px;
+}
