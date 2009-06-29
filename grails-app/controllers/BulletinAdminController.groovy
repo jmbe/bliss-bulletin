@@ -1,4 +1,4 @@
-import org.springframework.security.annotation.Secured
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 
 @Secured(['ROLE_ADMIN'])
 class BulletinAdminController {
