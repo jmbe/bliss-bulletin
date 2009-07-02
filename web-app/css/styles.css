@@ -36,7 +36,12 @@ body {color:#333333;font-family:helvetica,arial,sans-serif;padding:0;margin:0;fo
 .header {height:100px;overflow:hidden;}
 .mid {padding:25px;background-image:url(../images/bg_fade.jpg);background-repeat:repeat-x;}
 .intro {height:100px;}
-.readspeaker {float:right;margin-top:6px;}
+.readspeaker {
+    float:right;
+    margin-top:6px;
+    /* Hide speaker link until it is fixed */
+    display: none;
+}
 
 /*** ISSUES LIST ***/
 .issue {padding:10px 0 10px 0;border-bottom:1px solid #e0e0e0;}
