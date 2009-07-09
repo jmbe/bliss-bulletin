@@ -9,22 +9,24 @@ var BulletinAdminHandler = Class.create({
 
 	opfUrlChange: function (event) {
 		var opfContainer = $('afterLastOpfPlaceholder').previous();
-		var opf =  opfContainer.select('input');
-		if(opf[0].value.length > 0 && opf[1].value.length > 0) {
-			opf.invoke('stopObserving', 'change');
+		var opfInput =  opfContainer.select('input');
+		//Only add a new row when both of the last opf input fields have a value
+		if(opfInput.first().value.length > 0 && opfInput.last().value.length > 0) {
+			opfInput.invoke('stopObserving', 'change');
 
 			var opfContainerClone = opfContainer.cloneNode(true);
-			var newOpf = opfContainerClone.select('input');
-			newOpf.first().id = '';
-			var id = newOpf.first().identify();
+			var newOpfInput = opfContainerClone.select('input');
+			newOpfInput.each(function(e){
+				e.value='';
+				e.id='';
+			});
+			var id = newOpfInput.first().identify();
 			opfContainerClone.select('label').first().setAttribute('for', id);
-			newOpf.last().id = '';
-			id = newOpf.last().identify();
+			id = newOpfInput.last().identify();
 			opfContainerClone.select('label').last().setAttribute('for', id);
-			newOpf.each(function(e){e.value='';});
 
 			$('afterLastOpfPlaceholder').insert({before: opfContainerClone});
-			$('afterLastOpfPlaceholder').previous().select('input').invoke('observe', 'change', this.opfUrlChange);
+			$('afterLastOpfPlaceholder').previous().select('input').invoke('observe', 'change', this.opfUrlChangeListener);
 		}
 	},
 
