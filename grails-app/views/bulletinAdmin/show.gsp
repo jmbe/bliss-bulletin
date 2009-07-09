@@ -52,14 +52,6 @@
 									<input type="text" id="description" name="description" value="${fieldValue(bean:bulletin,field:'description')}"/>
 								</td>
 							</tr>
-							<tr class="prop">
-	                            <td class="name">
-	                                <label for="buttercupPath"><g:message code="admin.bulletin.buttercupPath"/></label>
-                                </td>
-	                            <td class="value">
-	                                <input type="text" id="buttercupPath" name="buttercupPath" value="${fieldValue(bean:bulletin,field:'buttercupPath')}"/>
-                                </td>
-                            </tr>
 							<g:each var="opf" status="i" in="${bulletin.opfs}">
 							<tr class="opf">
 								<td class="name">
