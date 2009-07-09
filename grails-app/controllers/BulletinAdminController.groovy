@@ -3,7 +3,7 @@ import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 @Secured(['ROLE_ADMIN'])
 class BulletinAdminController {
 
-	def bulletinService
+	def bulletinService = new BulletinService()
 	
     def index = { redirect(action:list,params:params) }
 
@@ -16,13 +16,13 @@ class BulletinAdminController {
     }
 
     def show = {
-        def bulletinInstance = Bulletin.get( params.id )
+        def bulletin = Bulletin.get( params.id )
 
-      if (!bulletinInstance) {
+      if (!bulletin) {
         flash.message = "Bulletin not found with id ${params.id}"
         redirect(action: list)
-      } else { 
-        [bulletinInstance: bulletinInstance]
+      } else {
+        [bulletin: bulletin]
       }
     }
 	
@@ -51,42 +51,45 @@ class BulletinAdminController {
 
 
     def update = {
-        def bulletinInstance = Bulletin.get( params.id )
-        if(bulletinInstance) {
+        def bulletin = Bulletin.get( params.id )
+        if(bulletin) {
             if(params.version) {
                 def version = params.version.toLong()
-                if(bulletinInstance.version > version) {
+                if(bulletin.version > version) {
                     
-                    bulletinInstance.errors.rejectValue("version", "bulletin.optimistic.locking.failure", "Another user has updated this Bulletin while you were editing.")
-                    render(view:'edit',model:[bulletinInstance:bulletinInstance])
+                    bulletin.errors.rejectValue("version", "bulletin.optimistic.locking.failure", "Another user has updated this Bulletin while you were editing.")
+                    render(view:'edit',model:[bulletinInstance:bulletin])
                     return
                 }
             }
             def coverPage = request.getFile('coverPage').getBytes()
             if(coverPage.length <= 0) {
-            	coverPage = bulletinInstance.coverPage
+            	coverPage = bulletin.coverPage
            	}
 
-            def bulletin = request.getFile('bulletin')
-            def data = bulletin.getBytes()
-            def filename = bulletin.originalFilename
+            def file = request.getFile('bulletin')
+            def data = file.getBytes()
+            def filename = file.originalFilename
             if(data.length <= 0) {
-            	data = bulletinInstance.data
-            	filename = bulletinInstance.name
+            	data = bulletin.data
+            	filename = bulletin.name
            	}
+
+	        def opfs = getOpfs(request)
+
+            bulletin.properties = params
+            bulletin.coverPage = coverPage
+            bulletin.data = data
+            bulletin.name = filename
+	        bulletin.opfs = opfs
             
-            bulletinInstance.properties = params
-            bulletinInstance.coverPage = coverPage
-            bulletinInstance.data = data
-            bulletinInstance.name = filename
-            
-            if(!bulletinInstance.hasErrors() && bulletinInstance.save()) {
-                flash.message = "Bulletin ${bulletinInstance.name} uppdaterad"
+            if(!bulletin.hasErrors() && bulletin.save()) {
+                flash.message = "Bulletin ${bulletin.name} uppdaterad"
                 //redirect(action:show,id:bulletinInstance.id)
                 redirect(action:list)
             }
             else {
-                render(view:'edit',model:[bulletinInstance:bulletinInstance])
+                render(view:'edit',model:[bulletinInstance:bulletin])
             }
         }
         else {
@@ -96,9 +99,9 @@ class BulletinAdminController {
     }
 
     def create = {
-        def bulletinInstance = new Bulletin()
-        bulletinInstance.properties = params
-        return ['bulletinInstance':bulletinInstance]
+        def bulletin = new Bulletin()
+        bulletin.properties = params
+        return ['bulletin':bulletin]
     }
 
     def save = {
@@ -106,7 +109,7 @@ class BulletinAdminController {
     	def coverPage = request.getFile('coverPage')
 	    def title = params['title']
 		def description = params['description']
-		def buttercupPath = params['buttercupPath']
+		def opfs = getOpfs(request)
 		
 		def errors = []
 		if(downloadedfile.getBytes().length <= 0) {
@@ -131,10 +134,32 @@ class BulletinAdminController {
 			}
 			redirect action:create, params:params
 		} else {
-	    	bulletinService.create(downloadedfile, coverPage, title, description, buttercupPath)
+	    	bulletinService.create(downloadedfile, coverPage, title, description, opfs)
 			flash.message = "The bulletin was created"
 			redirect(action:list,params:params)
 		}
     }
+
+	List getOpfs(javax.servlet.http.HttpServletRequest request) {
+		def opfTitles = request.getParameterValues("opfTitle")
+		def opfUrls = request.getParameterValues("opfUrl")
+		def opfs = new LinkedList()
+
+		if (opfTitles.length != opfUrls.length)
+			return opfs
+
+		def index = 0
+		while(index < opfTitles.length) {
+			String title = opfTitles[index]
+			String url = opfUrls[index]
+			if(title.length() > 0 && url.length() > 0) {
+				def opf = new Opf(title: title, url: url)
+				opfs.add(opf)
+			}
+			index++
+		}
+
+		return opfs
+	}
 }
 

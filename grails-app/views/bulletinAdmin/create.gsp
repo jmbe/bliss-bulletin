@@ -2,9 +2,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="admin" />
-        <title><g:message code="admin.bulletin.create.title"/></title>         
+        <title><g:message code="admin.bulletin.create.title"/></title>
+	    <g:javascript library="prototype"/>
+	    <g:javascript library="bulletinAdminHandler"/>
     </head>
-    <body>
+    <body onload="new BulletinAdminHandler()">
     	<g:applyLayout name="adminNav" />
 
         <div class="body">
@@ -63,13 +65,17 @@
                             	</td>
                             </tr>
                             <tr>
-                            	<td valign="middle" class="name">
-                                    <label for="buttercupPath"><g:message code="admin.bulletin.buttercupPath"/></label>
+								<td class="name">
+                                    <label for="opf"><g:message code="admin.bulletin.opfPath"/></label>
                                 </td>
-                            	<td>
-                            		<input type="text" id="buttercupPath" name="buttercupPath" value="${params['buttercupPath']}"/>
-                            	</td>
+                                <td class="value">
+                                    <input type="text" id="opf" name="opfTitle" />
+                                </td>
+	                            <td class="value">
+                                    <input type="text" name="opfUrl" />
+                                </td>
                             </tr>
+                            <tr id="afterLastOpfPlaceholder"/>
                         </tbody>
                     </table>
                 </div>

@@ -28,10 +28,10 @@
 						<h2>${bulletin.title}</h2>
 						<p class="dimmed summary">${bulletin.description}</p>
 						<g:link class="icon_text pdf" action="data" id="${bulletin.id}"><g:message code="bulletin.list.downloadPDF"/></g:link>
-						<g:if test="${bulletin.buttercupPath}">
+						<g:each var="opf" in="${bulletin.opfs}">
 							<br/>
-							<a class="icon_text opf" href="${bulletin.buttercupPath}"><g:message code="bulletin.list.playOPF"/></a>
-						</g:if>
+							<a class="icon_text opf" href="${opf.url}">${opf.title}</a>
+						</g:each>
 						<div class="clear"></div>
 					</div>
 				</div>

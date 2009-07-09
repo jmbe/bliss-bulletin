@@ -6,7 +6,7 @@
         <g:layoutHead />
         <g:javascript library="application" />				
     </head>
-    <body>
+    <body onload="${pageProperty(name:'body.onload')}">
     	<h1 style="margin-left:15px; font-size: xx-large;">Blissbulletin Admin</h1>
         <g:layoutBody />		
     </body>	
