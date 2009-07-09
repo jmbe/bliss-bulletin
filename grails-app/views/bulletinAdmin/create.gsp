@@ -64,9 +64,9 @@
                             		<input type="text" id="description" name="description" value="${params['description']}"/>
                             	</td>
                             </tr>
-                            <tr>
+                            <tr class="opf">
 								<td class="name">
-                                    <label for="opf"><g:message code="admin.bulletin.opfPath"/></label>
+                                    <label for="opf"><g:message code="admin.bulletin.opf"/></label>
                                 </td>
                                 <td class="value">
                                     <input type="text" id="opf" name="opfTitle" />

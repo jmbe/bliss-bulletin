@@ -61,9 +61,9 @@
                                 </td>
                             </tr>
 							<g:each var="opf" status="i" in="${bulletin.opfs}">
-							<tr>
+							<tr class="opf">
 								<td class="name">
-                                    <label for="opf${i}"><g:message code="admin.bulletin.opfPath"/></label>
+                                    <label for="opf${i}"><g:message code="admin.bulletin.opf"/></label>
                                 </td>
                                 <td class="value">
                                     <input type="text" id="opf${i}" name="opfTitle" value="${opf.title}" />
@@ -73,9 +73,9 @@
                                 </td>
                             </tr>
 							</g:each>
-                            <tr>
+                            <tr class="opf">
 								<td class="name">
-                                    <label for="opf${nOpfs}"><g:message code="admin.bulletin.opfPath"/></label>
+                                    <label for="opf${nOpfs}"><g:message code="admin.bulletin.opf"/></label>
                                 </td>
                                 <td class="value">
                                     <input type="text" id="opf${nOpfs}" name="opfTitle" />
