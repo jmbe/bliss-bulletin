@@ -18,6 +18,9 @@ var BulletinAdminHandler = Class.create({
 			newOpf.first().id = '';
 			var id = newOpf.first().identify();
 			opfContainerClone.select('label').first().setAttribute('for', id);
+			newOpf.last().id = '';
+			id = newOpf.last().identify();
+			opfContainerClone.select('label').last().setAttribute('for', id);
 			newOpf.each(function(e){e.value='';});
 
 			$('afterLastOpfPlaceholder').insert({before: opfContainerClone});

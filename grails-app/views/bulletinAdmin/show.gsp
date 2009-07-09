@@ -55,25 +55,31 @@
 							<g:each var="opf" status="i" in="${bulletin.opfs}">
 							<tr class="opf">
 								<td class="name">
-                                    <label for="opf${i}"><g:message code="admin.bulletin.opf"/></label>
+                                    <label for="opfTitle${i}"><g:message code="admin.bulletin.opf.title"/></label>
                                 </td>
                                 <td class="value">
-                                    <input type="text" id="opf${i}" name="opfTitle" value="${opf.title}" />
+                                    <input type="text" id="opfTitle${i}" name="opfTitle" value="${opf.title}" />
+                                </td>
+								<td class="name">
+                                    <label for="opfUrl${i}"><g:message code="admin.bulletin.opf.url"/></label>
                                 </td>
 	                            <td class="value">
-                                    <input type="text" name="opfUrl" value="${opf.url}"/>
+                                    <input type="text" id="opfUrl${i}" name="opfUrl" value="${opf.url}"/>
                                 </td>
                             </tr>
 							</g:each>
                             <tr class="opf">
 								<td class="name">
-                                    <label for="opf${nOpfs}"><g:message code="admin.bulletin.opf"/></label>
+                                    <label for="opfTitle${nOpfs}"><g:message code="admin.bulletin.opf.title"/></label>
                                 </td>
                                 <td class="value">
-                                    <input type="text" id="opf${nOpfs}" name="opfTitle" />
+                                    <input type="text" id="opfTitle${nOpfs}" name="opfTitle" />
+                                </td>
+	                            <td class="name">
+                                    <label for="opfUrl${nOpfs}"><g:message code="admin.bulletin.opf.url"/></label>
                                 </td>
 	                            <td class="value">
-                                    <input type="text" name="opfUrl" />
+                                    <input type="text" id="opfUrl${nOpfs}" name="opfUrl" />
                                 </td>
                             </tr>
 	                        <tr id="afterLastOpfPlaceholder"/>

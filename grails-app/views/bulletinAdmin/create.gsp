@@ -64,15 +64,18 @@
                             		<input type="text" id="description" name="description" value="${params['description']}"/>
                             	</td>
                             </tr>
-                            <tr class="opf">
+                             <tr class="opf">
 								<td class="name">
-                                    <label for="opf"><g:message code="admin.bulletin.opf"/></label>
+                                    <label for="opfTitle${nOpfs}"><g:message code="admin.bulletin.opf.title"/></label>
                                 </td>
                                 <td class="value">
-                                    <input type="text" id="opf" name="opfTitle" />
+                                    <input type="text" id="opfTitle${nOpfs}" name="opfTitle" />
+                                </td>
+	                            <td class="name">
+                                    <label for="opfUrl${nOpfs}"><g:message code="admin.bulletin.opf.url"/></label>
                                 </td>
 	                            <td class="value">
-                                    <input type="text" name="opfUrl" />
+                                    <input type="text" id="opfUrl${nOpfs}" name="opfUrl" />
                                 </td>
                             </tr>
                             <tr id="afterLastOpfPlaceholder"/>
