@@ -1,7 +1,7 @@
 var BulletinAdminHandler = Class.create({
 	initialize: function() {
 		this.opfUrlChangeListener = this.opfUrlChange.bindAsEventListener(this);
-		$('afterLastOpfPlaceholder').previous().select('input').invoke('observe', 'change', this.opfUrlChangeListener);
+		$('afterLastOpfPlaceholder').previous().select('input').invoke('observe', 'keyup', this.opfUrlChangeListener);
 
 		this.bulletinFormSubmitListener = this.validateForm.bindAsEventListener(this);
 		$$('form').first().observe('submit', this.bulletinFormSubmitListener);
@@ -12,7 +12,7 @@ var BulletinAdminHandler = Class.create({
 		var opfInput =  opfContainer.select('input');
 		//Only add a new row when both of the last opf input fields have a value
 		if(opfInput.first().value.length > 0 && opfInput.last().value.length > 0) {
-			opfInput.invoke('stopObserving', 'change');
+			opfInput.invoke('stopObserving', 'keyup');
 
 			var opfContainerClone = opfContainer.cloneNode(true);
 			var newOpfInput = opfContainerClone.select('input');
@@ -26,7 +26,7 @@ var BulletinAdminHandler = Class.create({
 			opfContainerClone.select('label').last().setAttribute('for', id);
 
 			$('afterLastOpfPlaceholder').insert({before: opfContainerClone});
-			$('afterLastOpfPlaceholder').previous().select('input').invoke('observe', 'change', this.opfUrlChangeListener);
+			$('afterLastOpfPlaceholder').previous().select('input').invoke('observe', 'keyup', this.opfUrlChangeListener);
 		}
 	},
 
@@ -36,7 +36,7 @@ var BulletinAdminHandler = Class.create({
 		for(var i = 0; i < opfs.length; i++) {
 			var opf = opfs[i].select('input');
 			if( (opf[0].value.length == 0 || opf[1].value.length == 0) && opf[1].value.length != opf[0].value.length ) {
-				errors[errors.length] = "Varje opf länk måste ha både titel och URL";//TODO add which opf caused the error
+				errors[errors.length] = "Varje OPF-länk måste ha både titel och URL";//TODO add which opf caused the error
 			}
 		}
 		if(errors.length > 0) {
