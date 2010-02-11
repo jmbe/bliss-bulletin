@@ -1,3 +1,8 @@
+import org.apache.log4j.DailyRollingFileAppender
+import org.apache.log4j.Priority
+import org.apache.log4j.helpers.OnlyOnceErrorHandler
+import org.apache.log4j.net.SMTPAppender
+
 // locations to search for config files that get merged into the main config
 // config files can either be Java properties files or ConfigSlurper scripts
 
@@ -41,6 +46,34 @@ environments {
 
 // log4j configuration
 log4j = {
+
+  appenders {
+        def dailyAppender = new DailyRollingFileAppender(name:'dailyAppender',
+                                             datePattern: "'.'yyyy-MM-dd",
+                                             file:'logs/blissbulletinen.log',
+                                             layout:pattern(conversionPattern: '%d %-5p [%c] %m%n'))
+        dailyAppender.threshold = Priority.INFO
+
+        def smtpAppender = new SMTPAppender(name:'smtpAppender',
+                                            to: 'asynclog@gmail.com',
+                                            from: "no-reply@blissbulletinen.se",
+                                            subject:"Problems with blissbulletinen",
+                                            layout:pattern(conversionPattern: '%d %-5p [%c] %m%n'));
+        smtpAppender.errorHandler = new OnlyOnceErrorHandler()
+        smtpAppender.threshold = Priority.INFO
+
+        console name:'stdout', layout:pattern(conversionPattern: '%d %-5p [%c] %m%n')
+        appender dailyAppender
+        appender smtpAppender
+
+    }
+
+    root {
+      additivity = true
+      debug 'stdout','dailyAppender', 'smtpAppender'
+    }
+
+
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
 	       'org.codehaus.groovy.grails.web.pages', //  GSP
 	       'org.codehaus.groovy.grails.web.sitemesh', //  layouts
