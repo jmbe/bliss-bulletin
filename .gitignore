@@ -6,5 +6,6 @@ web-app/WEB-INF/classes/
 plugins
 target
 test
-
+.idea/**
 *.iml
+
