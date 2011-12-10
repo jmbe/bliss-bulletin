@@ -70,9 +70,10 @@ log4j = {
 
     root {
       additivity = true
-      debug 'stdout','dailyAppender', 'smtpAppender'
+      info 'stdout','dailyAppender', 'smtpAppender'
     }
 
+    debug 'se.blissbulletinen'
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
 	       'org.codehaus.groovy.grails.web.pages', //  GSP
