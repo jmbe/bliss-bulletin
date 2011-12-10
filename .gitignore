@@ -9,3 +9,5 @@ test
 .idea/**
 *.iml
 logs/*
+
+org.eclipse.wst.common.project.facet.core.xml
