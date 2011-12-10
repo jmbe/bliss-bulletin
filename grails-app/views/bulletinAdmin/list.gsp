@@ -36,7 +36,7 @@
                     <tbody>
                     <g:each in="${bulletinInstanceList}" status="i" var="bulletin">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                        	<td><img class="coverPage" src="${createLink(controller:'bulletin', action:'coverPage', id:bulletin.id)}" alt="${message(code:'bulletin.coverPage')}"/></td>
+                        	<td><img class="coverPage" style="width: 200px" src="${createLink(controller:'bulletin', action:'coverPage', id:bulletin.id)}" alt="${message(code:'bulletin.coverPage')}"/></td>
                         	
                             <td><g:link action="show" id="${bulletin.id}">${fieldValue(bean:bulletin, field:'name')}</g:link></td>
 
@@ -51,7 +51,7 @@
                             <td>
                               <g:form action="toggleVisible">
                                 <g:hiddenField name="id" value="${bulletin.id}"/>
-                                <g:submitButton class="toggleVisible" name="toggleVisible" value="${fieldValue(bean:bulletin, field:'visible')}"/>
+                                <g:submitButton class="toggleVisible" name="toggleVisible" value="${bulletin.visible ? 'Ja' : 'Nej' }"/>
                               </g:form>
                             </td>
                         
