@@ -38,6 +38,22 @@
 			        <artifactId>ant</artifactId>
 			        <groupId>org.apache.ant</groupId>
 			    </exclusion>
+			    <exclusion>
+			        <artifactId>ant-launcher</artifactId>
+			        <groupId>org.apache.ant</groupId>
+			    </exclusion>
+			    <exclusion>
+			        <artifactId>gant_groovy1.7</artifactId>
+			        <groupId>org.codehaus.gant</groupId>
+			    </exclusion>
+			    <exclusion>
+			        <artifactId>gpars</artifactId>
+			        <groupId>org.codehaus.gpars</groupId>
+			    </exclusion>
+			    <exclusion>
+			        <artifactId>ivy</artifactId>
+			        <groupId>org.apache.ivy</groupId>
+			    </exclusion>
 			</exclusions>
 		</dependency>
 
