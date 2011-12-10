@@ -20,7 +20,6 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate =  "update"
             url = "jdbc:mysql://localhost/bulletin-dev"
         }
     }
@@ -32,7 +31,6 @@ environments {
     }
     production {
         dataSource {
-            dbCreate =  "update"
             url = "jdbc:mysql://localhost/bliss-bulletin"
         }
     }
