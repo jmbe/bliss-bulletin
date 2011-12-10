@@ -10,5 +10,6 @@ test
 .idea/**
 *.iml
 logs/*
+*.tmp
 
 org.eclipse.wst.common.project.facet.core.xml
