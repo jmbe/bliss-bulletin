@@ -1,8 +1,7 @@
-grails.war.dependencies = {
-    grailsSettings.runtimeDependencies?.each { File f ->
-        fileset(dir: f.parent, includes: f.name)
-    }
-}
+/* Workaround for dependency problem when building on Hudson */
+grails.war.resources = { stagingDir ->
+    delete(file:"${stagingDir}/WEB-INF/lib/slf4j-api-1.5.2.jar")
+  }
 
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
