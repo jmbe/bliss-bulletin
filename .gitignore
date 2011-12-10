@@ -5,6 +5,7 @@
 web-app/WEB-INF/classes/
 plugins
 target
+target-eclipse
 test
 .idea/**
 *.iml
