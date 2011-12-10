@@ -1,4 +1,6 @@
-/* Workaround for dependency problem when building on Hudson */
+/* Workaround for dependency problem when building on Hudson 
+ * http://tkills.blogspot.com/2011/03/grails-excluding-plugin-dependencies.html
+ */
 grails.war.resources = { stagingDir ->
     delete(file:"${stagingDir}/WEB-INF/lib/slf4j-api-1.5.2.jar")
   }
