@@ -1,9 +1,16 @@
 dataSource {
     pooled = true
-    driverClassName = "org.hsqldb.jdbcDriver"
-    username = "sa"
-    password = ""
+    driverClassName = "com.mysql.jdbc.Driver"
+    username = "bulletin-dev"
+    password = "bulletin-dev"
+    dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+    properties = {
+        testOnBorrow = "true"
+        validationQuery = "SELECT 1 FROM DUAL;"
+        defaultAutoCommit = "false"
+    }
 }
+
 hibernate {
     cache.use_second_level_cache=true
     cache.use_query_cache=true
@@ -13,28 +20,20 @@ hibernate {
 environments {
     development {
         dataSource {
-            driverClassName = "com.mysql.jdbc.Driver"
             dbCreate =  "update"
-
-            username = "bulletin-dev"
-            password = "bulletin-dev"
-            url = "jdbc:mysql://localhost/bliss-bulletin?autoReconnect=true"
+            url = "jdbc:mysql://localhost/bulletin-dev"
         }
     }
     test {
         dataSource {
             dbCreate = "create"
-            url = "jdbc:hsqldb:mem:testDb"
+            url = "jdbc:mysql://localhost/bulletin-test"
         }
     }
     production {
         dataSource {
-            driverClassName = "com.mysql.jdbc.Driver"
             dbCreate =  "update"
-
-            username = "bulletin-dev"
-            password = "bulletin-dev"
-            url = "jdbc:mysql://localhost/bliss-bulletin?autoReconnect=true"
+            url = "jdbc:mysql://localhost/bliss-bulletin"
         }
     }
 }
