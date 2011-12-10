@@ -26,6 +26,8 @@ environments {
     test {
         dataSource {
             dbCreate = "create"
+            username = "bulletin-test"
+            password = "bulletin-test"
             url = "jdbc:mysql://localhost/bulletin-test"
         }
     }
