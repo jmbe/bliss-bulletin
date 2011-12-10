@@ -4,7 +4,7 @@ dataSource {
     username = "bulletin-dev"
     password = "bulletin-dev"
     dialect = org.hibernate.dialect.MySQL5InnoDBDialect
-    properties = {
+    properties {
         testOnBorrow = "true"
         validationQuery = "/* ping */ SELECT 1 FROM DUAL;"
         defaultAutoCommit = "false"
