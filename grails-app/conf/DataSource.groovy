@@ -6,7 +6,7 @@ dataSource {
     dialect = org.hibernate.dialect.MySQL5InnoDBDialect
     properties = {
         testOnBorrow = "true"
-        validationQuery = "SELECT 1 FROM DUAL;"
+        validationQuery = "/* ping */ SELECT 1 FROM DUAL;"
         defaultAutoCommit = "false"
     }
 }
