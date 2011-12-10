@@ -7,7 +7,7 @@ dataSource {
     properties {
         testOnBorrow = "true"
         validationQuery = "/* ping */ SELECT 1 FROM DUAL;"
-        defaultAutoCommit = "false"
+//        defaultAutoCommit = "false"
     }
 }
 
