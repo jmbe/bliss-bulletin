@@ -23,28 +23,6 @@
 			<version>${grails.version}</version>
 		</dependency>
 
-		<!--
-			Grails defaults to OSCache for the second-level Hibernate cache.
-		-->
-		<dependency>
-			<groupId>opensymphony</groupId>
-			<artifactId>oscache</artifactId>
-			<version>2.4</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.jms</groupId>
-					<artifactId>jms</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>servlet-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 
 		<!--
 			For ease of development and testing, we include the HSQLDB database.
@@ -75,6 +53,7 @@
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4</version>
+            <scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -87,48 +66,9 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
+            <scope>provided</scope>
 		</dependency>
-
-        <dependency>
-            <groupId>org.tmatesoft.svnkit</groupId>
-            <artifactId>svnkit</artifactId>
-            <version>1.2.3.5521</version>
-            <scope>runtime</scope>
-        </dependency>
 	</dependencies>
-
-	<repositories>
-		<!-- Required to get hold of JTA -->
-		<repository>
-			<id>maven2-repository.dev.java.net</id>
-			<name>Java.net Repository for Maven</name>
-			<url>http://download.java.net/maven/2/</url>
-			<layout>default</layout>
-		</repository>
-		<repository>
-			<id>Codehaus Snapshots</id>
-			<url>http://snapshots.repository.codehaus.org</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>Codehaus Snapshots</id>
-			<url>http://snapshots.repository.codehaus.org</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<build>
 		<pluginManagement />
