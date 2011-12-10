@@ -1,7 +1,7 @@
 #/bin/bash
 
 user=$1
-database=bulletin-test
+database=bliss-bulletin-test
 database_user=bulletin-test
 database_password=bulletin-test
 
