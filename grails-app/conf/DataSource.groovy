@@ -36,4 +36,14 @@ environments {
             url = "jdbc:mysql://localhost/bliss-bulletin"
         }
     }
+
+    // create database if not exists `bliss-bulletin-qa`;
+    // grant all on `bliss-bulletin-qa`.* to `bulletin-qa`@'localhost' identified by 'bulletin-qa';
+    qa {
+        dataSource {
+            username = "bulletin-qa"
+            password = "bulletin-qa"
+            url = "jdbc:mysql://localhost/bliss-bulletin-qa"
+        }
+    }
 }
