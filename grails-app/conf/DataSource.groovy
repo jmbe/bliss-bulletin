@@ -28,7 +28,7 @@ environments {
             dbCreate = "update"
             username = "bulletin-test"
             password = "bulletin-test"
-            url = "jdbc:mysql://localhost/bulletin-test"
+            url = "jdbc:mysql://localhost/bliss-bulletin-test"
         }
     }
     production {
