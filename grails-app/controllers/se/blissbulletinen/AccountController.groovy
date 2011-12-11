@@ -1,3 +1,4 @@
+package se.blissbulletinen
 import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 
 import se.blissbulletinen.Account;

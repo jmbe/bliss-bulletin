@@ -1,3 +1,4 @@
+package se.blissbulletinen
 import se.blissbulletinen.Bulletin;
 
 class BulletinController {

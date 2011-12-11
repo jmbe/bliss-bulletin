@@ -1,3 +1,4 @@
+package se.blissbulletinen
 /**
  * Logout Controller (Example).
  */
