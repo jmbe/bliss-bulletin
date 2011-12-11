@@ -1,3 +1,4 @@
+package se.blissbulletinen
 import org.hibernate.Hibernate
 
 import se.blissbulletinen.Bulletin;

@@ -1,6 +1,7 @@
 import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 
 import se.blissbulletinen.Bulletin;
+import se.blissbulletinen.BulletinService;
 import se.blissbulletinen.Opf;
 
 @Secured(['ROLE_ADMIN'])
