@@ -12,4 +12,6 @@ test
 logs/*
 *.tmp
 
+.link_to_grails_plugins
+
 org.eclipse.wst.common.project.facet.core.xml
