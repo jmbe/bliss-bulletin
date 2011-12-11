@@ -22,7 +22,7 @@ class BulletinAdminController {
             flash.message = "Bulletin not found with id ${params.id}"
             redirect(action: list)
         } else {
-            [bulletin:s bulletin]
+            [bulletin: bulletin]
         }
     }
 
