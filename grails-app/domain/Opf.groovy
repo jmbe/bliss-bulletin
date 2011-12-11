@@ -1,4 +1,4 @@
 class Opf {
-	String title
-	String url
+    String title
+    String url
 }

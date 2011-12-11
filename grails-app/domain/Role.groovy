@@ -7,15 +7,15 @@
  */
 class Role {
 
-	static hasMany = [people: Account]
+    static hasMany = [people: Account]
 
-	/** description */
-	String description
-	/** ROLE String */
-	String authority
+    /** description */
+    String description
+    /** ROLE String */
+    String authority
 
-	static constraints = {
-		authority(blank: false, unique: true)
-		description()
-	}
+    static constraints = {
+        authority(blank: false, unique: true)
+        description()
+    }
 }
