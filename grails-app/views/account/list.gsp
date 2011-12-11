@@ -1,3 +1,4 @@
+<%@page import="se.blissbulletinen.Account"%>
 <head>
 	<meta name="layout" content="admin" />
 	<title><g:message code="admin.account.list.title"/></title>
