@@ -1,5 +1,7 @@
 import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 
+import se.blissbulletinen.Role;
+
 /**
  * Authority Controller.
  */

@@ -1,3 +1,6 @@
+import se.blissbulletinen.Account;
+import se.blissbulletinen.Role;
+
 class BootStrap {
 
     def authenticateService

@@ -1,5 +1,8 @@
 import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 
+import se.blissbulletinen.Account;
+import se.blissbulletinen.Role;
+
 /**
  * Account controller.
  */

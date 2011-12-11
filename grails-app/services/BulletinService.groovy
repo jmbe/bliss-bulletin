@@ -1,5 +1,7 @@
 import org.hibernate.Hibernate
 
+import se.blissbulletinen.Bulletin;
+
 class BulletinService {
 
     boolean transactional = true

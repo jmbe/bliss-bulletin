@@ -1,3 +1,4 @@
+package se.blissbulletinen
 class Bulletin {
     String name
     String title

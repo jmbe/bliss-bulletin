@@ -1,3 +1,5 @@
+import se.blissbulletinen.Bulletin;
+
 class BulletinController {
 
     def index = {
