@@ -145,7 +145,7 @@ class BulletinAdminController {
         }
     }
 
-    List getOpfs(javax.servlet.http.HttpServletRequest request) {
+    private List getOpfs(javax.servlet.http.HttpServletRequest request) {
         def opfTitles = request.getParameterValues("opfTitle")
         def opfUrls = request.getParameterValues("opfUrl")
         def opfs = new LinkedList()
