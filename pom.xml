@@ -283,12 +283,12 @@
     <distributionManagement>
         <snapshotRepository>
             <id>se.internetapplications-snapshots</id>
-            <url>http://nexus.internetapplications.se/content/repositories/snapshots</url>
+            <url>http://nexus.intem.se/content/repositories/snapshots</url>
             <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
         <repository>
             <id>se.internetapplications-releases</id>
-            <url>http://nexus.internetapplications.se/content/repositories/releases</url>
+            <url>http://nexus.intem.se/content/repositories/releases</url>
             <uniqueVersion>false</uniqueVersion>
         </repository>
     </distributionManagement>
