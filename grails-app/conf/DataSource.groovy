@@ -33,6 +33,8 @@ environments {
     }
     production {
         dataSource {
+            username = "bulletin-prod"
+            password = "bulletin-prod"
             url = "jdbc:mysql://localhost/bliss-bulletin"
         }
     }
